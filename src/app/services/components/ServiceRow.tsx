@@ -30,13 +30,13 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
       viewport={{ once: true, amount: 0.2 }} // Slightly adjusted amount
     >
       <div // Changed from motion.div, no individual animation for image block
-        className="w-full md:w-1/2 aspect-video md:aspect-auto md:h-[300px] lg:h-[350px] relative rounded-lg overflow-hidden shadow-xl"
+        className="w-full md:w-1/2 aspect-square md:h-[300px] lg:h-[350px] md:aspect-square relative rounded-full overflow-hidden shadow-xl flex items-center justify-center px-6 py-12 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer group"
       >
         <Image 
           src={imageUrl} 
           alt={name} 
           fill={true} 
-          className="object-cover"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 

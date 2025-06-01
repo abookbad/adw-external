@@ -14,7 +14,7 @@ export const HomePageHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <span className="bg-gradient-to-b from-blue-500 via-blue-500 via-[40%] to-white bg-clip-text text-transparent">AGENCY</span> <br /> <span className="bg-gradient-to-b from-white via-white via-[60%] to-blue-500 bg-clip-text text-transparent">DEV WORKS</span>
+        <span className="bg-gradient-to-b from-blue-500 via-white via-[45%] to-white bg-clip-text text-transparent">AGENCY</span> <br /> <span className="bg-gradient-to-b from-white via-white via-[60%] to-blue-500 bg-clip-text text-transparent">DEV WORKS</span>
       </motion.h1>
       <motion.p 
         className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-2xl mb-10 font-[family-name:var(--font-geist-sans)]"

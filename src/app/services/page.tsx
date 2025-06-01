@@ -9,32 +9,32 @@ const services = [
   {
     name: "AI Voice Agents (Inbound/Outbound) & Text",
     description: "AI-powered voice & text agents for 24/7 customer service, sales outreach, lead qualification, and appointment setting.",
-    imageUrl: "/services-images/voice-agent.jpeg"
+    imageUrl: "/services-images/AI.png"
   },
   {
     name: "SEO Services",
     description: "Boost organic traffic and rankings with data-driven SEO, including keyword research, on-page/technical optimization, and local SEO.",
-    imageUrl: "/services-images/seo.jpeg"
+    imageUrl: "/services-images/SEO.png"
   },
   {
     name: "AI Marketing - Proprietary Ad Optimizer",
     description: "Maximize ad spend & conversions with our exclusive AI Ad Optimizer, dynamically adjusting campaigns in real-time for peak performance.",
-    imageUrl: "/services-images/ai-marketing.jpeg"
+    imageUrl: "/services-images/Marketing.png"
   },
   {
     name: "Web Design",
     description: "Stunning, responsive, user-centric websites focused on brand identity, intuitive navigation, speed, and SEO for optimal conversions.",
-    imageUrl: "/services-images/web-design.jpeg"
+    imageUrl: "/services-images/Web Design.png"
   },
   {
     name: "Business Analytics",
     description: "Unlock actionable insights from your data. Custom dashboards and reporting for smarter, data-backed strategic decisions and growth.",
-    imageUrl: "/services-images/business-analytics.jpeg"
+    imageUrl: "/services-images/Business Analytics.png"
   },
   {
     name: "Business Automation",
     description: "Automate marketing, sales, and operations. Improve productivity, reduce errors, and free up your valuable time and resources.",
-    imageUrl: "/services-images/business-automation.jpeg"
+    imageUrl: "/services-images/Automations.png"
   }
 ];
 
