@@ -6,13 +6,9 @@ import { Vignette } from './Vignette';
 // import { DynamicLight } from './DynamicLight'; // Unused
 // import { Starfield } from './Starfield'; // Unused
 
-interface BackgroundEffectsProps {
-  // mouseX: MotionValue<number>; // Unused
-  // mouseY: MotionValue<number>; // Unused
-  // windowSize: { width: number; height: number }; // Unused
-}
+// interface BackgroundEffectsProps {} // Changed to React.FC<{}> or removed type for props
 
-export const BackgroundEffects: React.FC<BackgroundEffectsProps> = (/*{ mouseX, mouseY, windowSize }*/) => { // Props removed
+export const BackgroundEffects = () => { // Removed React.FC type
   return (
     <>
       <Vignette />

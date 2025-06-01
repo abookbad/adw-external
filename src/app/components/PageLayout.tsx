@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, /* useEffect, */ ReactNode } from 'react'; // Commented out useEffect
 // import { motion, MotionValue, useMotionValue, useSpring, useTransform } from "framer-motion"; // MotionValue unused
 import { NavigationMenu } from './NavigationMenu'; 
 import { BackgroundEffects } from './BackgroundEffects';
@@ -13,14 +13,14 @@ interface PageLayoutProps {
 }
 
 export const PageLayout: React.FC<PageLayoutProps> = ({ children, animateContentShift = false, showNavInitially = true }) => {
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [windowSize /*, setWindowSize */] = useState({ width: 0, height: 0 }); // Commented out setWindowSize
   // const mouseXInitial = useMotionValue(0); // Unused
   // const mouseYInitial = useMotionValue(0); // Unused
   // const springConfig = { damping: 100, stiffness: 1000, mass: 0.5 }; // Unused
   // const mouseX = useSpring(mouseXInitial, springConfig); // Unused
   // const mouseY = useSpring(mouseYInitial, springConfig); // Unused
 
-  const [showNav, setShowNav] = useState(showNavInitially);
+  const [showNav /*, setShowNav */] = useState(showNavInitially); // Commented out setShowNav
 
   /* Commenting out useEffect to resolve dependency warnings and related unused vars
   useEffect(() => {

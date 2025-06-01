@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { /* useState, useEffect, */ ReactNode } from 'react';
 // import { motion, MotionValue, useMotionValue, useSpring } from "framer-motion"; // motion & MotionValue unused
 import { TopNavigationBar } from './TopNavigationBar';
 // import { BackgroundEffects } from './BackgroundEffects'; // Assuming this would be unused if useEffect is out
@@ -10,7 +10,7 @@ interface InnerPageLayoutProps {
 }
 
 export const InnerPageLayout: React.FC<InnerPageLayoutProps> = ({ children }) => {
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  // const [windowSize, setWindowSize] = useState({ width: 0, height: 0 }); // Unused
   // const mouseXInitial = useMotionValue(0); // Unused due to useEffect removal
   // const mouseYInitial = useMotionValue(0); // Unused due to useEffect removal
   // const springConfig = { damping: 100, stiffness: 1000, mass: 0.5 }; // Unused

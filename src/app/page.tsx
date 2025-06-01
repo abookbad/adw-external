@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { /* useState, useEffect */ } from 'react'; // Commented out useState, useEffect
 // import { motion, useMotionValue, useSpring } from "framer-motion"; // motion is unused, commenting out the whole line for now
-import { useMotionValue, useSpring } from "framer-motion"; // Keeping useMotionValue and useSpring
+// import { useMotionValue, useSpring } from "framer-motion"; // Commented out as mouseX/Y are unused
 import { BottomInfoBar } from './components/BottomInfoBar';
 import { HomePageHero } from './components/HomePageHero';
 import { PrimaryTopNav } from './components/PrimaryTopNav';
@@ -11,16 +11,17 @@ import { BackgroundEffects } from './components/BackgroundEffects'; // Keeping b
 // import { RotatingLayer } from './components/RotatingLayer'; 
 
 export default function NewHomePage() {
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  // const [windowSize, setWindowSize] = useState({ width: 0, height: 0 }); // Unused
 
-  const mouseXInitial = useMotionValue(0);
-  const mouseYInitial = useMotionValue(0);
+  // const mouseXInitial = useMotionValue(0); // Unused
+  // const mouseYInitial = useMotionValue(0); // Unused
 
   // Smooth mouse values using spring
-  const springConfig = { damping: 100, stiffness: 1000, mass: 0.5 };
-  const mouseX = useSpring(mouseXInitial, springConfig);
-  const mouseY = useSpring(mouseYInitial, springConfig);
+  // const springConfig = { damping: 100, stiffness: 1000, mass: 0.5 }; // Unused
+  // const mouseX = useSpring(mouseXInitial, springConfig); // Unused
+  // const mouseY = useSpring(mouseYInitial, springConfig); // Unused
 
+  /* Comment out useEffect as its setters are unused
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -33,7 +34,7 @@ export default function NewHomePage() {
       mouseYInitial.set(event.clientY);
     };
 
-    handleResize(); // Set initial size and mouse position
+    handleResize(); 
     window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -42,6 +43,7 @@ export default function NewHomePage() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [mouseXInitial, mouseYInitial]);
+  */
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950">
