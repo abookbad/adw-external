@@ -41,11 +41,12 @@ export default function ServicesPage() {
   return (
     <ThemedInnerPageLayout>
       {/* Full-height title section, respects layout padding, fills space between header/footer */}
-      <div className="w-full flex flex-col items-center justify-center text-center min-h-[60vh] md:min-h-[calc(100vh-16rem)]">
+      <div className="w-full flex flex-col items-center justify-center text-center min-h-[calc(100vh-16rem)]">
         <h1 
           className="font-bold font-[family-name:var(--font-geist-sans)] uppercase \
                      bg-gradient-to-b from-cyan-300 to-blue-600 bg-clip-text text-transparent \
-                     text-[5vw] sm:text-[6vw] md:text-[8vw] lg:text-[10vw] leading-none tracking-widest select-none"
+                     text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl \
+                     leading-none tracking-tighter select-none"
         > 
           <span className="block">Our</span>
           <span className="block">Services</span>
