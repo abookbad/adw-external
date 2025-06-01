@@ -14,7 +14,7 @@ export const HomePageHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        AGENCY <br /> DEVWORKS
+        <span className="bg-gradient-to-b from-blue-500 via-blue-500 via-[40%] to-white bg-clip-text text-transparent">AGENCY</span> <br /> <span className="bg-gradient-to-b from-white via-white via-[60%] to-blue-500 bg-clip-text text-transparent">DEV WORKS</span>
       </motion.h1>
       <motion.p 
         className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-2xl mb-10 font-[family-name:var(--font-geist-sans)]"
@@ -31,7 +31,7 @@ export const HomePageHero = () => {
       >
         <Link 
           href="/services"
-          className="bg-cyan-500 hover:bg-cyan-400 text-white font-bold py-2 px-6 xs:py-3 xs:px-8 sm:py-3 sm:px-8 md:py-4 md:px-10 rounded-lg text-sm xs:text-base sm:text-lg md:text-xl font-[family-name:var(--font-geist-sans)] transition-colors shadow-lg hover:shadow-cyan-500/50"
+          className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-6 xs:py-3 xs:px-8 sm:py-3 sm:px-8 md:py-4 md:px-10 rounded-lg text-sm xs:text-base sm:text-lg md:text-xl font-[family-name:var(--font-geist-sans)] transition-colors shadow-lg hover:shadow-blue-700/50"
         >
           Explore Our Services
         </Link>
