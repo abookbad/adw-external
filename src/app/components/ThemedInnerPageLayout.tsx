@@ -43,7 +43,7 @@ export const ThemedInnerPageLayout: React.FC<ThemedInnerPageLayoutProps> = ({ ch
     <div className="relative flex flex-col min-h-screen bg-slate-950 text-white overflow-x-hidden">
       {/* <BackgroundEffects mouseX={mouseX} mouseY={mouseY} windowSize={windowSize} /> */}{/* Temporarily commented out BackgroundEffects and its props */}
       <PrimaryTopNav />
-      <main className={`flex-grow flex flex-col px-4 sm:px-6 lg:px-8 pt-24`}>
+      <main className={`flex-grow flex flex-col px-4 sm:px-6 lg:px-8 pt-24 pb-16`}>
         {children}
       </main>
       <BottomInfoBar />

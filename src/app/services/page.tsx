@@ -3,6 +3,7 @@
 import React from 'react';
 import { ThemedInnerPageLayout } from '../components/ThemedInnerPageLayout';
 import { ServiceRow } from './components/ServiceRow';
+import { PageHeroTitle } from '../components/PageHeroTitle';
 
 const services = [
   {
@@ -40,22 +41,10 @@ const services = [
 export default function ServicesPage() {
   return (
     <ThemedInnerPageLayout>
-      {/* Full-height title section, respects layout padding, fills space between header/footer */}
-      <div className="w-full flex flex-col items-center justify-center text-center min-h-[calc(100vh-16rem)]">
-        <h1 
-          className="font-bold font-[family-name:var(--font-geist-sans)] uppercase \
-                     bg-gradient-to-b from-cyan-300 to-blue-600 bg-clip-text text-transparent \
-                     text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl \
-                     leading-none tracking-tighter select-none"
-        > 
-          <span className="block">Our</span>
-          <span className="block">Services</span>
-        </h1>
-      </div>
+      <PageHeroTitle titleLine1="Our" titleLine2="Services" />
 
       {/* Service items section */}
-      {/* This div ensures content below the full-height title is within the standard page width and has its own padding */}
-      <div className="w-full max-w-7xl mx-auto px-4 pt-24 md:pt-32"> {/* Increased top padding for separation after full-height title */}
+      <div className="w-full max-w-7xl mx-auto px-4 pt-24 md:pt-32">
         <div className="w-full space-y-16 md:space-y-24">
           {services.map((service, index) => (
             <React.Fragment key={service.name}> 
