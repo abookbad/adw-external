@@ -1,6 +1,6 @@
 "use client";
 
-import React, { /* useState, useEffect */ } from 'react'; // Commented out useState, useEffect
+import React, { useEffect } from 'react';
 // import { motion, useMotionValue, useSpring } from "framer-motion"; // motion is unused, commenting out the whole line for now
 // import { useMotionValue, useSpring } from "framer-motion"; // Commented out as mouseX/Y are unused
 import { BottomInfoBar } from './components/BottomInfoBar';
@@ -45,8 +45,46 @@ export default function NewHomePage() {
   }, [mouseXInitial, mouseYInitial]);
   */
 
+  // Prevent scrolling on mobile for home page
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // Store original styles
+      const originalBodyStyle = {
+        overflow: document.body.style.overflow,
+        height: document.body.style.height,
+        maxHeight: document.body.style.maxHeight,
+      };
+      
+      const originalHtmlStyle = {
+        overflow: document.documentElement.style.overflow,
+        height: document.documentElement.style.height,
+        maxHeight: document.documentElement.style.maxHeight,
+      };
+
+      // Apply mobile-specific styles
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+      document.body.style.maxHeight = '100vh';
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.height = '100vh';
+      document.documentElement.style.maxHeight = '100vh';
+
+      // Cleanup function
+      return () => {
+        document.body.style.overflow = originalBodyStyle.overflow;
+        document.body.style.height = originalBodyStyle.height;
+        document.body.style.maxHeight = originalBodyStyle.maxHeight;
+        document.documentElement.style.overflow = originalHtmlStyle.overflow;
+        document.documentElement.style.height = originalHtmlStyle.height;
+        document.documentElement.style.maxHeight = originalHtmlStyle.maxHeight;
+      };
+    }
+  }, []);
+
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950">
+    <main className="relative flex h-screen max-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 md:min-h-screen">
       <BackgroundEffects /> {/* Removed mouseX, mouseY, windowSize props */}
       {/* <RotatingLayer mouseX={mouseX} mouseY={mouseY} /> */}
 
