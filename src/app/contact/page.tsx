@@ -181,7 +181,7 @@ export default function GetInTouchPage() {
                     <div className="pt-4">
                       <button
                         type="submit"
-                        className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                        className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 cursor-pointer"
                       >
                         Send Message
                       </button>
