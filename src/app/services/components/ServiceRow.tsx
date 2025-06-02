@@ -10,9 +10,10 @@ interface ServiceRowProps {
   description: string;
   imageUrl: string;
   isReversed?: boolean;
+  slug: string; // Added slug for navigation
 }
 
-export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, imageUrl, isReversed = false }) => {
+export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, imageUrl, isReversed = false, slug }) => {
   const simpleFadeInVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,12 +54,18 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
         >
           {description}
         </p>
-        <div> {/* Changed from motion.div */}
+        <div className="flex flex-col sm:flex-row gap-3">
           <Link 
-            href="/contact" 
-            className={`bg-slate-700 hover:bg-slate-600 text-white font-[family-name:var(--font-geist-sans)] font-semibold py-2.5 px-6 rounded-md transition-colors duration-200 shadow-md hover:shadow-lg text-sm lg:text-base`}
+            href={`/services/${slug}`}
+            className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-sans)] font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center hover:scale-105"
           >
             Learn More
+          </Link>
+          <Link 
+            href="/contact" 
+            className="border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-[family-name:var(--font-geist-sans)] font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center"
+          >
+            Get Quote
           </Link>
         </div>
       </div>

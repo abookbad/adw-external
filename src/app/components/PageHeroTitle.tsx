@@ -10,7 +10,7 @@ interface PageHeroTitleProps {
 
 export const PageHeroTitle: React.FC<PageHeroTitleProps> = ({ titleLine1, titleLine2 }) => {
   return (
-    <div className="w-full flex flex-col items-center justify-center text-center min-h-[calc(100vh-16rem)]">
+    <div className="w-full flex flex-col items-center justify-center text-center min-h-[calc(100vh-16rem)] relative">
       <motion.h1 
         className="font-bold font-[family-name:var(--font-geist-sans)] uppercase text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tighter select-none"
         style={{ 
@@ -92,6 +92,60 @@ export const PageHeroTitle: React.FC<PageHeroTitleProps> = ({ titleLine1, titleL
           {titleLine2}
         </motion.span>
       </motion.h1>
+
+      {/* Jumping Down Arrow - Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        }}
+      >
+        <motion.div
+          className="text-blue-400 mb-2 text-sm font-medium tracking-wider opacity-70"
+          animate={{ opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          SCROLL
+        </motion.div>
+        <motion.svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="text-blue-400"
+          animate={{ 
+            y: [0, 8, 0],
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{ 
+            duration: 1.5, 
+            repeat: Infinity, 
+            ease: "easeInOut"
+          }}
+        >
+          <path
+            d="M7 13L12 18L17 13"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M7 6L12 11L17 6"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.5"
+          />
+        </motion.svg>
+      </motion.div>
     </div>
   );
 }; 

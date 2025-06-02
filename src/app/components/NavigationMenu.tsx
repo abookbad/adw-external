@@ -31,7 +31,7 @@ export const NavigationMenu = () => {
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Get in Touch", href: "/contact" },
   ];
 
   return (

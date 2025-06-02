@@ -251,7 +251,7 @@ export const HomePageHero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        Building the Future of Digital Experiences.
+        Making Your Business Life Easier.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

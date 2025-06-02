@@ -8,7 +8,7 @@ const navItems = [
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Get in Touch", href: "/contact" },
   // Add other relevant items like 'Blog', 'Careers', etc. if needed
 ];
 
