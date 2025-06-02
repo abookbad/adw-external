@@ -42,7 +42,11 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
       </div>
 
       <div // Changed from motion.div, no individual animation for text block
-        className={`w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left ${isReversed ? 'md:items-end md:text-right' : ''}`}
+        className={`w-full md:w-1/2 flex flex-col items-center text-center ${
+          isReversed 
+            ? 'md:items-end md:text-right' 
+            : 'md:items-start md:text-left'
+        }`}
       >
         <h3 // Changed from motion.h3
           className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 font-[family-name:var(--font-geist-sans)] text-white"

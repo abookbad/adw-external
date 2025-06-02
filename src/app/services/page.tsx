@@ -58,7 +58,7 @@ export default function ServicesPage() {
                 name={service.name} 
                 description={service.description} 
                 imageUrl={service.imageUrl}
-                isReversed={index % 2 === 1}
+                isReversed={index === 1 || index === 3 || index === 5}
                 slug={service.slug}
               />
               {index < services.length - 1 && (
