@@ -2,7 +2,7 @@
 
 import React, { useState, /* useEffect, */ ReactNode } from 'react'; // Commented out useEffect
 // import { motion, MotionValue, useMotionValue, useSpring, useTransform } from "framer-motion"; // MotionValue unused
-import { NavigationMenu } from './NavigationMenu'; 
+import { PrimaryTopNav } from './PrimaryTopNav'; // Changed from NavigationMenu
 import { BackgroundEffects } from './BackgroundEffects';
 // import { RotatingLayer } from './RotatingLayer'; // Comment out if component itself is unused here
 
@@ -68,7 +68,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ children, animateContent
   return (
     <div className="relative min-h-screen bg-black text-white perspective-1000px isolate overflow-hidden">
       <BackgroundEffects /* mouseX={mouseX} mouseY={mouseY} windowSize={windowSize} */ />
-      <NavigationMenu /* showNav={showNav} */ />
+      <PrimaryTopNav /* showNav={showNav} */ /> {/* Changed from NavigationMenu */}
       {/* <motion.div 
         className="relative z-10 flex flex-col items-center justify-center min-h-screen pt-48 p-8"
         animate={{ x: contentX, opacity: 1 }}
