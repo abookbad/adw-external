@@ -6,9 +6,10 @@ import { motion } from 'framer-motion';
 interface PageHeroTitleProps {
   titleLine1: string;
   titleLine2: string;
+  subtitle?: string;
 }
 
-export const PageHeroTitle: React.FC<PageHeroTitleProps> = ({ titleLine1, titleLine2 }) => {
+export const PageHeroTitle: React.FC<PageHeroTitleProps> = ({ titleLine1, titleLine2, subtitle }) => {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center min-h-[calc(100vh-16rem)] relative">
       <motion.h1 
@@ -92,6 +93,17 @@ export const PageHeroTitle: React.FC<PageHeroTitleProps> = ({ titleLine1, titleL
           {titleLine2}
         </motion.span>
       </motion.h1>
+
+      {subtitle && (
+        <motion.p
+          className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-xl lg:max-w-2xl mt-6 md:mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+        >
+          {subtitle}
+        </motion.p>
+      )}
 
       {/* Jumping Down Arrow - Scroll Indicator */}
       <motion.div 

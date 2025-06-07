@@ -49,25 +49,25 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
         }`}
       >
         <h3 // Changed from motion.h3
-          className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 font-[family-name:var(--font-geist-sans)] text-white"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase text-white"
         >
           {name}
         </h3>
         <p // Changed from motion.p
-          className="text-slate-300 font-[family-name:var(--font-geist-sans)] text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6 max-w-md md:max-w-none"
+          className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-6 max-w-md md:max-w-none"
         >
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <Link 
             href={`/services/${slug}`}
-            className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-sans)] font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center hover:scale-105"
+            className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center hover:scale-105"
           >
             Learn More
           </Link>
           <Link 
             href="/contact" 
-            className="hidden md:block border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-[family-name:var(--font-geist-sans)] font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center"
+            className="hidden md:block border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center"
           >
             Get Quote
           </Link>
