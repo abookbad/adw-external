@@ -18,7 +18,7 @@ const callScenarios = {
   customerService: {
     title: "Customer Service",
     description: "AI handles support inquiries and troubleshooting",
-    workflowId: "aeb5f1b1-18a1-44ed-8c8b-240e096f635d",
+    workflowId: "4ae56811-4307-464b-87a8-77826799ce67",
     features: [
       "Order status inquiries",
       "Product troubleshooting",
@@ -29,7 +29,7 @@ const callScenarios = {
   leadQualification: {
     title: "Lead Qualification", 
     description: "AI qualifies prospects and books demos",
-    workflowId: "094ee2e1-2a25-4d9d-b031-0922c1fc9021",
+    workflowId: "e9c705ec-dc69-400d-bba0-a5e336960d4c",
     features: [
       "Budget qualification",
       "Needs assessment",
@@ -40,7 +40,7 @@ const callScenarios = {
   appointmentBooking: {
     title: "Appointment Booking",
     description: "AI schedules appointments seamlessly",
-    workflowId: "ad863f61-7e6b-48da-a5ad-d0cf88b1b8ac",
+    workflowId: "d16d5f14-2edd-4cff-afd8-72193da970f3",
     features: [
       "Calendar availability",
       "Service selection",
