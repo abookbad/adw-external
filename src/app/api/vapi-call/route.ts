@@ -8,7 +8,7 @@ const VAPI_CONFIG = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { workflowId, phoneNumber } = await request.json();
+    const { workflowId, phoneNumber, name, businessName, email } = await request.json();
 
     // Validate required fields
     if (!workflowId || !phoneNumber) {
@@ -27,12 +27,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Prepare VAPI payload
+    // Optional: Basic validation for additional fields (non-blocking for now)
+    const errors: string[] = [];
+    if (!name || typeof name !== 'string' || !name.trim()) errors.push('name');
+    if (!businessName || typeof businessName !== 'string' || !businessName.trim()) errors.push('businessName');
+    if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('email');
+
+    if (errors.length) {
+      // For now we won't block the call, but we will log missing/invalid fields
+      console.warn('Invalid or missing fields:', errors);
+    }
+
+    // Prepare VAPI payload (do not include extra fields to avoid API errors)
     const payload = {
       workflowId: workflowId,
       customer: { number: phoneNumber },
       phoneNumberId: VAPI_CONFIG.VAPI_PHONE_NUMBER_ID
     };
+
+    // Log the additional info for internal tracking/analytics
+    console.log('Voice call request info:', {
+      name,
+      businessName,
+      email,
+    });
 
     // Make call to VAPI
     const response = await fetch(VAPI_CONFIG.API_URL, {

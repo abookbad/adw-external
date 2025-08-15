@@ -52,6 +52,22 @@ const callScenarios = {
 
 type ScenarioKey = keyof typeof callScenarios;
 
+// Common industries for selector
+const industries = [
+  'Healthcare',
+  'Real Estate',
+  'E-commerce',
+  'Legal',
+  'Automotive',
+  'Finance',
+  'Restaurants',
+  'SaaS',
+  'Hospitality',
+  'Home Services',
+  'Education',
+  'Other'
+];
+
 interface CallStatus {
   status: 'idle' | 'calling' | 'success' | 'error';
   message?: string;
@@ -60,8 +76,12 @@ interface CallStatus {
 
 const LiveVoiceCallDemo = () => {
   const [selectedScenario, setSelectedScenario] = useState<ScenarioKey>('customerService');
+  const [fullName, setFullName] = useState('');
+  const [businessName, setBusinessName] = useState('');
+  const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [callStatus, setCallStatus] = useState<CallStatus>({ status: 'idle' });
+  const [industry, setIndustry] = useState('');
 
   const currentScenario = callScenarios[selectedScenario];
 
@@ -101,6 +121,20 @@ const LiveVoiceCallDemo = () => {
       return;
     }
 
+    // Basic client-side validation for additional fields
+    if (!fullName.trim()) {
+      setCallStatus({ status: 'error', message: 'Please enter your name' });
+      return;
+    }
+    if (!businessName.trim()) {
+      setCallStatus({ status: 'error', message: 'Please enter your business name' });
+      return;
+    }
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setCallStatus({ status: 'error', message: 'Please enter a valid email address' });
+      return;
+    }
+
     setCallStatus({ status: 'calling', message: 'Initiating call...' });
 
     try {
@@ -112,6 +146,10 @@ const LiveVoiceCallDemo = () => {
         body: JSON.stringify({
           workflowId: currentScenario.workflowId,
           phoneNumber: apiPhoneNumber,
+          industry,
+          name: fullName.trim(),
+          businessName: businessName.trim(),
+          email: email.trim(),
         }),
       });
 
@@ -139,7 +177,11 @@ const LiveVoiceCallDemo = () => {
 
   const resetCall = () => {
     setCallStatus({ status: 'idle' });
+    setFullName('');
+    setBusinessName('');
+    setEmail('');
     setPhoneNumber('');
+    setIndustry('');
   };
 
   return (
@@ -147,8 +189,13 @@ const LiveVoiceCallDemo = () => {
       className="bg-slate-800/60 rounded-2xl p-4 sm:p-6 md:p-8 border border-slate-700/50 shadow-2xl backdrop-blur-sm"
       initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
     >
-      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Live AI Voice Call Demo</h3>
-      <p className="text-xs sm:text-sm text-teal-300 mb-6 sm:mb-8 text-center font-[family-name:var(--font-geist-mono)] tracking-wider">Experience a real AI voice agent call. Enter your number and get called immediately.</p>
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Get Your Live AI Voice Demo Call</h3>
+      <p className="text-xs sm:text-sm text-teal-300 mb-3 sm:mb-4 text-center font-[family-name:var(--font-geist-mono)] tracking-wider">Instant, no-cost demo. See how an AI agent sounds on a real call.</p>
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-4 sm:mb-6">
+        <span className="text-[10px] sm:text-xs px-2.5 py-1 rounded-full border border-teal-600 text-teal-300 bg-teal-900/20 font-[family-name:var(--font-geist-mono)] tracking-wider">No Credit Card</span>
+        <span className="text-[10px] sm:text-xs px-2.5 py-1 rounded-full border border-green-600 text-green-300 bg-green-900/20 font-[family-name:var(--font-geist-mono)] tracking-wider">Takes under 2 minutes</span>
+        <span className="text-[10px] sm:text-xs px-2.5 py-1 rounded-full border border-slate-600 text-slate-300 bg-slate-800/60 font-[family-name:var(--font-geist-mono)] tracking-wider">US numbers only</span>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {/* Configuration Section */}
@@ -172,15 +219,56 @@ const LiveVoiceCallDemo = () => {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-slate-300 mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">2. Enter Your Phone Number:</p>
-            <input
-              type="tel"
-              value={phoneNumber}
-              onChange={handlePhoneChange}
-              placeholder="(555) 123-4567"
-              disabled={callStatus.status === 'calling'}
-              className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
-            />
+            <p className="text-sm font-semibold text-slate-300 mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">2. Enter Your Info:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+              <input
+                type="text"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                placeholder="Your Name"
+                disabled={callStatus.status === 'calling'}
+                className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+              <input
+                type="text"
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
+                placeholder="Business Name"
+                disabled={callStatus.status === 'calling'}
+                className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                disabled={callStatus.status === 'calling'}
+                className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+              <input
+                type="tel"
+                value={phoneNumber}
+                onChange={handlePhoneChange}
+                placeholder="(555) 123-4567"
+                disabled={callStatus.status === 'calling'}
+                className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+            </div>
+            <div className="grid grid-cols-1 mt-3">
+              <select
+                value={industry}
+                onChange={(e) => setIndustry(e.target.value)}
+                disabled={callStatus.status === 'calling'}
+                className="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-teal-500 focus:outline-none font-[family-name:var(--font-geist-mono)] disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <option value="" disabled>Select Your Industry</option>
+                {industries.map((ind) => (
+                  <option key={ind} value={ind}>{ind}</option>
+                ))}
+              </select>
+            </div>
             <p className="text-xs text-slate-400 mt-2 font-[family-name:var(--font-geist-mono)]">
               US phone numbers only. You&apos;ll receive a call within 10 seconds.
             </p>
@@ -277,12 +365,20 @@ const LiveVoiceCallDemo = () => {
             {callStatus.status === 'idle' && (
               <button 
                 onClick={initiateCall}
-                disabled={!phoneNumber || formatForAPI(phoneNumber) === ''}
+                disabled={
+                  !phoneNumber ||
+                  formatForAPI(phoneNumber) === '' ||
+                  !fullName.trim() ||
+                  !businessName.trim() ||
+                  !email.trim() ||
+                  !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+                  !industry
+                }
                 className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-sm shadow-lg hover:shadow-xl transform hover:scale-[1.02] font-[family-name:var(--font-geist-mono)] tracking-wider uppercase bg-teal-600 hover:bg-teal-700 text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <div className="flex items-center justify-center gap-2">
                   <PhoneIcon className="w-4 h-4" />
-                  Start Live Demo Call
+                  Get My Live AI Demo Call
                 </div>
               </button>
             )}
