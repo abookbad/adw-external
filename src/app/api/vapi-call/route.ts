@@ -8,7 +8,7 @@ const VAPI_CONFIG = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { workflowId, phoneNumber, name, businessName, email, industry } = await request.json();
+    const { workflowId, phoneNumber, name, businessName, email, industry, scenarioTitle } = await request.json();
 
     // Validate required fields
     if (!workflowId || !phoneNumber) {
@@ -71,6 +71,36 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to initiate call. Please try again.' },
         { status: response.status }
       );
+    }
+
+    // Fire-and-forget: send lead details to GHL webhook (does not block response)
+    try {
+      const webhookUrl = 'https://services.leadconnectorhq.com/hooks/PqpLnJVC3VrmBmWnu5d2/webhook-trigger/f39d484c-de03-41d3-8212-44004b94043f';
+      const digitsOnlyPhone = phoneNumber.replace(/\D/g, '');
+      const payloadForWebhook = {
+        source: 'adw-external-app',
+        event: 'ai_voice_demo_started',
+        name,
+        businessName,
+        email,
+        phoneE164: phoneNumber,
+        phoneDigits: digitsOnlyPhone,
+        industry,
+        scenario: scenarioTitle,
+        workflowId,
+        callId: responseData?.id ?? null,
+        timestamp: new Date().toISOString()
+      };
+      // Do not await strictly; but ensure request is fired reliably
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payloadForWebhook)
+      }).catch((err) => {
+        console.warn('GHL webhook error:', err);
+      });
+    } catch (err) {
+      console.warn('Failed to trigger GHL webhook:', err);
     }
 
     // Return success response

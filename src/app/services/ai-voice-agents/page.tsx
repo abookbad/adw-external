@@ -147,6 +147,7 @@ const LiveVoiceCallDemo = () => {
           workflowId: currentScenario.workflowId,
           phoneNumber: apiPhoneNumber,
           industry,
+          scenarioTitle: currentScenario.title,
           name: fullName.trim(),
           businessName: businessName.trim(),
           email: email.trim(),
@@ -177,11 +178,6 @@ const LiveVoiceCallDemo = () => {
 
   const resetCall = () => {
     setCallStatus({ status: 'idle' });
-    setFullName('');
-    setBusinessName('');
-    setEmail('');
-    setPhoneNumber('');
-    setIndustry('');
   };
 
   return (

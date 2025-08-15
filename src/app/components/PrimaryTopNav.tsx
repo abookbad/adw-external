@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
@@ -26,15 +27,23 @@ export const PrimaryTopNav = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950 text-white py-4 border-b border-slate-700/50 hover:bg-slate-900/95 hover:border-cyan-400/30 transition-all duration-300">
       <div className="container mx-auto flex justify-center items-center px-2 xs:px-4 max-w-full">
         <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10">
-          {/* Home */}
-          <li>
-            <Link 
-              href="/" 
-              className="font-[family-name:var(--font-geist-mono)] text-sm xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-wider uppercase p-2 sm:p-3"
-            >
-              Home
+          {/* Logo */}
+          <li className="flex items-center">
+            <Link href="/" aria-label="ADW Home" className="inline-flex items-center p-1 sm:p-2 group">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-fuchsia-600/30 via-purple-600/25 to-cyan-400/30 blur-md opacity-70 group-hover:opacity-90 group-hover:blur-lg transition" />
+                <Image 
+                  src="/adw_final.png" 
+                  alt="ADW" 
+                  fill={true}
+                  sizes="(min-width: 768px) 64px, (min-width: 640px) 56px, 48px"
+                  className="relative z-[1] object-contain drop-shadow-[0_0_10px_rgba(147,51,234,0.55)] group-hover:drop-shadow-[0_0_18px_rgba(34,211,238,0.8)] transition-transform duration-200 group-hover:scale-105" 
+                  priority 
+                />
+              </div>
             </Link>
           </li>
+          
 
           {/* Services Dropdown */}
           <li 
