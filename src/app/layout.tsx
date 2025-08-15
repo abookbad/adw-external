@@ -34,6 +34,17 @@ export const metadata: Metadata = {
   },
   description: "Leading technology consultancy specializing in AI voice agents, web development, SEO services, and business automation. Transform your business with cutting-edge solutions from Agency Dev Works.",
   keywords: ["AI solutions", "technology consultancy", "AI voice agents", "web development", "SEO services", "business automation", "digital transformation", "Agency Dev Works"],
+  icons: {
+    icon: [
+      { url: "/adw_final.png", type: "image/png" },
+      { url: "/adw_final.png", sizes: "32x32", type: "image/png" },
+      { url: "/adw_final.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/adw_final.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/adw_final.png"],
+  },
   openGraph: {
     title: "Agency Dev Works - AI & Technology Solutions",
     description: "Transform your business with cutting-edge AI and technology solutions from Agency Dev Works.",
@@ -41,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Agency Dev Works",
     images: [
       {
-        url: "/og-image.png",
+        url: "/adw_final.png",
         width: 1200,
         height: 630,
         alt: "Agency Dev Works",
@@ -54,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Agency Dev Works - AI & Technology Solutions",
     description: "Leading AI and tech solutions for business growth. Agency Dev Works.",
-    images: ["/twitter-image.png"],
+    images: ["/adw_final.png"],
   },
   robots: {
     index: true,
