@@ -8,7 +8,7 @@ const VAPI_CONFIG = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { workflowId, phoneNumber, name, businessName, email } = await request.json();
+    const { workflowId, phoneNumber, name, businessName, email, industry } = await request.json();
 
     // Validate required fields
     if (!workflowId || !phoneNumber) {
@@ -50,6 +50,7 @@ export async function POST(request: NextRequest) {
       name,
       businessName,
       email,
+      industry,
     });
 
     // Make call to VAPI
