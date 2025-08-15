@@ -594,6 +594,102 @@ const AIVoiceAgentCapabilities = () => (
   </motion.div>
 );
 
+// Testimonials Section
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      quote:
+        "The AI agent booked 37 appointments in our first week. Customers thought it was a real rep—quality was excellent.",
+      name: "Sarah Mitchell",
+      title: "Operations Manager",
+      company: "BrightSmiles Dental",
+      industry: "Healthcare",
+      result: "37 appts / week"
+    },
+    {
+      quote:
+        "Response times dropped to near-instant and our support queue vanished. This paid for itself in days.",
+      name: "David Chen",
+      title: "Head of Support",
+      company: "ShopVerse",
+      industry: "E-commerce",
+      result: "<0.5s responses"
+    },
+    {
+      quote:
+        "Our SDRs now focus on qualified leads only. Conversion rates are up and team morale improved.",
+      name: "Ana Rodriguez",
+      title: "VP of Sales",
+      company: "CloudPilot",
+      industry: "SaaS",
+      result: "+28% SQLs"
+    }
+  ];
+
+  return (
+    <motion.div
+      className="bg-slate-800/60 rounded-2xl p-4 sm:p-6 md:p-8 border border-teal-700/50 shadow-2xl backdrop-blur-sm"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+    >
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+        What Clients Say
+      </h3>
+      <p className="text-xs sm:text-sm text-teal-300 mb-6 sm:mb-10 text-center font-[family-name:var(--font-geist-mono)]">
+        Real results from real teams using AI voice agents in production.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        {testimonials.map((t, index) => (
+          <motion.div
+            key={t.name}
+            className="relative h-full p-4 sm:p-5 rounded-xl border border-slate-700 bg-slate-900/50"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-1.5 mb-3">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-4 h-4 text-teal-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.035a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.035a1 1 0 00-1.176 0l-2.802 2.035c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.069-3.292z" />
+                </svg>
+              ))}
+              <span className="ml-2 text-[10px] sm:text-xs text-teal-300 font-[family-name:var(--font-geist-mono)] uppercase tracking-wider">
+                {t.result}
+              </span>
+            </div>
+
+            <blockquote className="text-sm sm:text-base text-slate-200 leading-relaxed">
+              “{t.quote}”
+            </blockquote>
+
+            <div className="mt-4 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-teal-600/20 border border-teal-500/50 flex items-center justify-center text-teal-300 text-xs font-semibold">
+                {t.name.split(' ').map((n) => n[0]).slice(0, 2).join('')}
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-white font-[family-name:var(--font-geist-mono)]">
+                  {t.name}
+                </div>
+                <div className="text-[11px] text-slate-400 font-[family-name:var(--font-geist-mono)]">
+                  {t.title} • {t.company} • {t.industry}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
 export default function AIVoiceAgentsPage() {
   return (
     <ThemedInnerPageLayout themeColor="teal">
@@ -609,8 +705,12 @@ export default function AIVoiceAgentsPage() {
           </p>
         </motion.div>
 
-        <div className="mb-24 sm:mb-32 md:mb-40">
+        <div className="mb-16 sm:mb-24 md:mb-28">
           <LiveVoiceCallDemo />
+        </div>
+
+        <div className="mb-24 sm:mb-32 md:mb-40">
+          <TestimonialsSection />
         </div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mb-12 sm:mb-16 md:mb-20">
