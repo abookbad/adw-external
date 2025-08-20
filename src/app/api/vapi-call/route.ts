@@ -44,15 +44,18 @@ export async function POST(request: NextRequest) {
       console.warn('Invalid or missing optional fields:', errors.filter((e) => e !== 'name'));
     }
 
-    // Prepare VAPI payload with first_name for workflow variable usage
+    // Prepare VAPI payload without customer.first_name; pass name via assistantOverrides
     const payload = {
       workflowId: workflowId,
-      customer: { number: phoneNumber, first_name: name },
+      customer: { number: phoneNumber },
       phoneNumberId: VAPI_CONFIG.VAPI_PHONE_NUMBER_ID,
       assistantOverrides: {
         variableValues: {
           first_name: name,
         },
+      },
+      metadata: {
+        customerName: name,
       },
     } as const;
 
