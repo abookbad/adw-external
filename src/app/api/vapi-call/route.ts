@@ -27,23 +27,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Optional: Basic validation for additional fields (non-blocking for now)
+    // Minimal validation for name (non-empty string)
     const errors: string[] = [];
     if (!name || typeof name !== 'string' || !name.trim()) errors.push('name');
     if (!businessName || typeof businessName !== 'string' || !businessName.trim()) errors.push('businessName');
     if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('email');
 
     if (errors.length) {
-      // For now we won't block the call, but we will log missing/invalid fields
-      console.warn('Invalid or missing fields:', errors);
+      // Keep behavior minimal: only enforce name presence, log others
+      if (errors.includes('name')) {
+        return NextResponse.json(
+          { error: 'Missing required field: name' },
+          { status: 400 }
+        );
+      }
+      console.warn('Invalid or missing optional fields:', errors.filter((e) => e !== 'name'));
     }
 
-    // Prepare VAPI payload (do not include extra fields to avoid API errors)
+    // Prepare VAPI payload with first_name for workflow variable usage
     const payload = {
       workflowId: workflowId,
-      customer: { number: phoneNumber },
-      phoneNumberId: VAPI_CONFIG.VAPI_PHONE_NUMBER_ID
-    };
+      customer: { number: phoneNumber, first_name: name },
+      phoneNumberId: VAPI_CONFIG.VAPI_PHONE_NUMBER_ID,
+      assistantOverrides: {
+        variableValues: {
+          first_name: name,
+        },
+      },
+    } as const;
 
     // Log the additional info for internal tracking/analytics
     console.log('Voice call request info:', {
