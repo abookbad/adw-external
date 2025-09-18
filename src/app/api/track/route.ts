@@ -37,7 +37,30 @@ function getClientIp(req: NextRequest): string | undefined {
   return undefined
 }
 
-async function geolocate(ip?: string) {
+function getGeoFromHeaders(req: NextRequest, ip?: string) {
+  const country = req.headers.get('x-vercel-ip-country') || req.headers.get('cf-ipcountry') || undefined
+  const region = req.headers.get('x-vercel-ip-country-region') || undefined
+  const city = req.headers.get('x-vercel-ip-city') || undefined
+  const latitude = req.headers.get('x-vercel-ip-latitude') || undefined
+  const longitude = req.headers.get('x-vercel-ip-longitude') || undefined
+  const timezone = req.headers.get('x-vercel-ip-timezone') || undefined
+  if (country || city || region || latitude || longitude || timezone) {
+    return {
+      ip,
+      city: city || undefined,
+      region: region || undefined,
+      country: country || undefined,
+      postal: undefined,
+      latitude: latitude ? Number(latitude) : undefined,
+      longitude: longitude ? Number(longitude) : undefined,
+      timezone: timezone || undefined,
+      org: undefined,
+    }
+  }
+  return undefined
+}
+
+async function geolocateViaIpApi(ip?: string) {
   if (!ip) return undefined
   try {
     const res = await fetch(`https://ipapi.co/${encodeURIComponent(ip)}/json/`, { next: { revalidate: 60 * 60 } })
@@ -67,7 +90,10 @@ export async function POST(req: NextRequest) {
     }
 
     const clientIp = getClientIp(req)
-    const geo = await geolocate(clientIp)
+    let geo = getGeoFromHeaders(req, clientIp)
+    if (!geo) {
+      geo = await geolocateViaIpApi(clientIp)
+    }
 
     const userAgent = req.headers.get('user-agent') || undefined
     const referer = req.headers.get('referer') || undefined
