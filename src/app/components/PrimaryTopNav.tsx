@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from './AuthProvider';
+import { useRouter } from 'next/navigation';
+import { logout } from '@/lib/firebase/auth';
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -22,11 +25,28 @@ const serviceItems = [
 
 export const PrimaryTopNav = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const { user } = useAuth();
+  const router = useRouter();
+
+  async function handleLogout() {
+    try {
+      await logout();
+      router.replace('/');
+      if (typeof window !== 'undefined') {
+        // Fallback in case router navigation is interrupted
+        setTimeout(() => {
+          if (window.location.pathname !== '/') window.location.href = '/';
+        }, 50);
+      }
+    } catch {
+      // noop
+    }
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950 text-white py-4 border-b border-slate-700/50 hover:bg-slate-900/95 hover:border-cyan-400/30 transition-all duration-300">
       <div className="container mx-auto flex justify-center items-center px-2 xs:px-4 max-w-full">
-        <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10">
+        <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10 mx-auto">
           {/* Logo */}
           <li className="flex items-center">
             <Link href="/" aria-label="ADW Home" className="inline-flex items-center p-1 sm:p-2 group">
@@ -134,11 +154,33 @@ export const PrimaryTopNav = () => {
               </Link>
             </li>
           ))}
+          {user ? (
+            <li className="relative flex items-center">
+              <Link href="/portal" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1.5 px-6 rounded-md text-sm sm:text-base transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">My Account</Link>
+              <button 
+                onClick={handleLogout}
+                className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[12px] xs:text-xs text-slate-300 hover:text-cyan-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase"
+              >
+                Sign out
+              </button>
+            </li>
+          ) : (
+            <li className="relative flex items-center">
+              <Link 
+                href="/login" 
+                className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1.5 px-6 xs:px-7 sm:px-8 rounded-md text-sm xs:text-sm sm:text-base md:text-lg transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40"
+              >
+                Login
+              </Link>
+              <Link 
+                href="/register" 
+                className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[12px] xs:text-xs text-slate-300 hover:text-cyan-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase"
+              >
+                Or Register
+              </Link>
+            </li>
+          )}
         </ul>
-        {/* Optional: A 'Register' or CTA button on the right, like the Sui site */}
-        {/* <Link href="/contact" className="ml-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
-          Get Started
-        </Link> */}
       </div>
     </nav>
   );

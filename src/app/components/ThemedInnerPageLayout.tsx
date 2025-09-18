@@ -3,6 +3,7 @@
 import React, { /* useState, useEffect, */ ReactNode } from 'react'; // Commented out useState, useEffect
 // import { motion, useMotionValue, useSpring } from "framer-motion"; // Temporarily commented out
 import { PrimaryTopNav } from './PrimaryTopNav';
+import { CompanyProvider } from './CompanyContext';
 import { BottomInfoBar } from './BottomInfoBar';
 // import { BackgroundEffects } from './BackgroundEffects'; // Temporarily commented out
 
@@ -88,11 +89,13 @@ export const ThemedInnerPageLayout: React.FC<ThemedInnerPageLayoutProps> = ({ ch
   return (
     <div className={`relative flex flex-col min-h-screen ${theme.mainBg} text-white overflow-x-hidden`}>
       {/* <BackgroundEffects mouseX={mouseX} mouseY={mouseY} windowSize={windowSize} /> */}{/* Temporarily commented out BackgroundEffects and its props */}
-      <PrimaryTopNav />
-      {/* Added a pseudo-element for top accent based on theme. Requires CSS to style ::before */}
-      <main className={`flex-grow flex flex-col px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative ${theme.accentClass} themed-main-content`}>
-        {children}
-      </main>
+      <CompanyProvider>
+        <PrimaryTopNav />
+        {/* Added a pseudo-element for top accent based on theme. Requires CSS to style ::before */}
+        <main className={`flex-grow flex flex-col px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative ${theme.accentClass} themed-main-content`}>
+          {children}
+        </main>
+      </CompanyProvider>
       <BottomInfoBar />
     </div>
   );

@@ -103,6 +103,14 @@ export const TopNavigationBar = () => {
               )}
             </AnimatePresence>
           </li>
+          <li className="relative flex items-center">
+            <Link href="/login" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1.5 px-6 rounded-md text-sm transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">
+              Login
+            </Link>
+            <Link href="/register" className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[10px] text-slate-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+              Or Register
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
