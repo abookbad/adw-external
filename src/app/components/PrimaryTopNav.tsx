@@ -25,6 +25,7 @@ const serviceItems = [
 
 export const PrimaryTopNav = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [menuPos, setMenuPos] = useState<{ left: number; top: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
 
@@ -44,19 +45,19 @@ export const PrimaryTopNav = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950 text-white py-4 border-b border-slate-700/50 hover:bg-slate-900/95 hover:border-cyan-400/30 transition-all duration-300">
-      <div className="container mx-auto flex justify-center items-center px-2 xs:px-4 max-w-full w-full overflow-x-auto">
-        <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10 mx-auto whitespace-nowrap">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950 text-white py-3 sm:py-4 border-b border-slate-700/50 hover:bg-slate-900/95 hover:border-cyan-400/30 transition-all duration-300">
+      <div className="container mx-auto flex justify-center items-center px-2 xs:px-3 sm:px-4 max-w-full w-full overflow-x-auto">
+        <ul className="flex items-center space-x-2 xs:space-x-3 sm:space-x-5 md:space-x-7 mx-auto whitespace-nowrap">
           {/* Logo */}
           <li className="flex items-center">
             <Link href="/" aria-label="ADW Home" className="inline-flex items-center p-1 sm:p-2 group">
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14">
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-fuchsia-600/30 via-purple-600/25 to-cyan-400/30 blur-md opacity-70 group-hover:opacity-90 group-hover:blur-lg transition" />
                 <Image 
                   src="/adw_final.png" 
                   alt="ADW" 
                   fill={true}
-                  sizes="(min-width: 768px) 64px, (min-width: 640px) 56px, 48px"
+                  sizes="(min-width: 768px) 56px, (min-width: 640px) 48px, 40px"
                   className="relative z-[1] object-contain drop-shadow-[0_0_10px_rgba(147,51,234,0.55)] group-hover:drop-shadow-[0_0_18px_rgba(34,211,238,0.8)] transition-transform duration-200 group-hover:scale-105" 
                   priority 
                 />
@@ -68,10 +69,14 @@ export const PrimaryTopNav = () => {
           {/* Services Dropdown */}
           <li 
             className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseEnter={(e) => {
+              setIsServicesOpen(true);
+              const r = (e.currentTarget as HTMLElement).getBoundingClientRect();
+              setMenuPos({ left: r.left + r.width / 2, top: r.bottom + 8 });
+            }}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <div className="font-[family-name:var(--font-geist-mono)] text-sm xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-wider uppercase p-2 sm:p-3 cursor-pointer flex items-center gap-1">
+            <div className="font-[family-name:var(--font-geist-mono)] text-xs xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-normal sm:tracking-wider uppercase p-1.5 sm:p-3 cursor-pointer flex items-center gap-1">
               <Link href="/services">Services</Link>
               <motion.svg
                 width="10"
@@ -93,7 +98,8 @@ export const PrimaryTopNav = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.15, ease: "easeOut" }}
-                  className="absolute top-full mt-2 left-0 w-64 bg-slate-900/95 backdrop-blur-md rounded-md shadow-2xl border border-slate-700/50 py-2 px-1"
+                  className="fixed -translate-x-1/2 w-64 bg-slate-900/95 backdrop-blur-md rounded-md shadow-2xl border border-slate-700/50 py-2 px-1 z-[999] max-h-[70vh] overflow-auto"
+                  style={menuPos ? { left: menuPos.left, top: menuPos.top } : undefined}
                 >
                   <div className="space-y-0">
                     {serviceItems.map((service, index) => (
@@ -141,7 +147,7 @@ export const PrimaryTopNav = () => {
             <li key={item.name}>
               <Link 
                 href={item.href} 
-                className="font-[family-name:var(--font-geist-mono)] text-sm xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-wider uppercase p-2 sm:p-3"
+                className="font-[family-name:var(--font-geist-mono)] text-xs xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-normal sm:tracking-wider uppercase p-1.5 sm:p-3"
               >
                 {item.mobileText ? (
                   <>
@@ -165,16 +171,16 @@ export const PrimaryTopNav = () => {
               </button>
             </li>
           ) : (
-            <li className="relative flex items-center">
+            <li className="relative flex flex-col items-center sm:flex-row">
               <Link 
                 href="/login" 
-                className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1 px-4 sm:px-6 md:px-8 rounded-md text-sm xs:text-sm sm:text-base md:text-lg transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40"
+                className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-normal sm:tracking-wider uppercase py-1 px-3 sm:px-5 md:px-7 rounded-md text-sm xs:text-sm sm:text-base md:text-lg transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40"
               >
                 Login
               </Link>
               <Link 
                 href="/register" 
-                className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[12px] xs:text-xs text-slate-300 hover:text-cyan-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase"
+                className="block w-full text-center whitespace-nowrap text-[10px] xs:text-xs text-slate-300 hover:text-cyan-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-normal sm:tracking-wider uppercase mt-1 sm:mt-0 sm:absolute sm:top-full sm:left-0 sm:right-0"
               >
                 Or Register
               </Link>

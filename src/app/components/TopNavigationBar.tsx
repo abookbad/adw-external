@@ -24,17 +24,18 @@ const serviceItems = [
 
 export const TopNavigationBar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [menuPos, setMenuPos] = useState<{ left: number; top: number } | null>(null);
 
   return (
-    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 p-4 sm:p-6 md:p-10 mt-2 sm:mt-4 max-w-7xl w-auto 
+    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 p-3 sm:p-5 md:p-8 mt-1 sm:mt-3 max-w-7xl w-auto 
                   bg-slate-900/70 backdrop-blur-md rounded-2xl shadow-2xl shadow-cyan-400/40 border border-slate-700/50 
                   font-[family-name:var(--font-geist-sans)]">
       <div className="flex items-center justify-between">
         <Logo />
-        <ul className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 ml-4 sm:ml-12 md:ml-48 overflow-x-auto whitespace-nowrap">
+        <ul className="flex items-center space-x-2 sm:space-x-4 md:space-x-6 ml-2 sm:ml-6 md:ml-12 overflow-x-auto whitespace-nowrap">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-sm sm:text-base md:text-lg tracking-wider uppercase">
+              <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-xs sm:text-sm md:text-base tracking-normal sm:tracking-wider uppercase">
                 {item.name}
               </Link>
             </li>
@@ -43,10 +44,14 @@ export const TopNavigationBar = () => {
           {/* Services Dropdown */}
           <li 
             className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseEnter={(e) => {
+              setIsServicesOpen(true);
+              const r = (e.currentTarget as HTMLElement).getBoundingClientRect();
+              setMenuPos({ left: r.left + r.width / 2, top: r.bottom + 8 });
+            }}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <div className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-sm sm:text-base md:text-lg tracking-wider uppercase cursor-pointer flex items-center gap-1">
+            <div className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-xs sm:text-sm md:text-base tracking-normal sm:tracking-wider uppercase cursor-pointer flex items-center gap-1">
               <Link href="/services">Services</Link>
               <motion.svg
                 width="10"
@@ -67,7 +72,8 @@ export const TopNavigationBar = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-700/50 py-4 px-2"
+                  className="fixed -translate-x-1/2 w-64 bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-700/50 py-4 px-2 z-[999] max-h-[70vh] overflow-auto"
+                  style={menuPos ? { left: menuPos.left, top: menuPos.top } : undefined}
                 >
                   <div className="space-y-1">
                     {serviceItems.map((service, index) => (
@@ -103,11 +109,11 @@ export const TopNavigationBar = () => {
               )}
             </AnimatePresence>
           </li>
-          <li className="relative flex items-center">
-            <Link href="/login" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1 px-4 sm:px-6 rounded-md text-sm transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">
+          <li className="relative flex flex-col items-center sm:flex-row">
+            <Link href="/login" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-normal sm:tracking-wider uppercase py-1 px-3 sm:px-5 rounded-md text-sm transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">
               Login
             </Link>
-            <Link href="/register" className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[10px] sm:text-[11px] text-slate-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+            <Link href="/register" className="block w-full text-center whitespace-nowrap text-[9px] sm:text-[11px] text-slate-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-normal sm:tracking-wider uppercase mt-1 sm:mt-0 sm:absolute sm:top-full sm:left-0 sm:right-0">
               Or Register
             </Link>
           </li>
