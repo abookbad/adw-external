@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { adminDb } from '@/lib/firebase/admin';
+import { getAdminDb } from '@/lib/firebase/admin';
 
 export const config = {
   api: {
@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
           const cust = await stripe.customers.retrieve(pm.customer as string) as Stripe.Customer;
           const companyId = (cust.metadata && cust.metadata.companyId) || undefined;
           if (companyId) {
+            const adminDb = getAdminDb();
             await adminDb.collection('companies').doc(companyId).set({
               last4: pm.card?.last4 || null,
               brand: pm.card?.brand || null,
