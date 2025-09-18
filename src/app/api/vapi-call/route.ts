@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const VAPI_CONFIG = {
-  VAPI_PHONE_NUMBER_ID: "8f8082ed-1755-4963-b6c9-4d31c8f185a1",
+  VAPI_PHONE_NUMBER_ID: "a71acac6-2439-4d42-b584-3a6badd4ca08",
   BEARER_TOKEN: process.env.VAPI_API_KEY,
   API_URL: "https://api.vapi.ai/call"
 };
