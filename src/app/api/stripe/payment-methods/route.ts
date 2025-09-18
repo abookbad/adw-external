@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { adminDb } from '@/lib/firebase/admin';
+import { getAdminDb } from '@/lib/firebase/admin';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: '2023-10-16',
@@ -14,6 +14,7 @@ export async function GET(req: NextRequest) {
 
     let customerId: string | undefined;
     if (companyId) {
+      const adminDb = getAdminDb();
       const snap = await adminDb.collection('companies').doc(companyId).get();
       const existing = snap.exists ? (snap.get('stripeCustomerId') as string | undefined) : undefined;
       if (existing) customerId = existing;

@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { adminDb } from '@/lib/firebase/admin';
+import { getAdminDb } from '@/lib/firebase/admin';
 
 export async function POST(req: NextRequest) {
   try {
     const { toEmail, companyId, companyName, inviterName } = await req.json();
     if (!toEmail || !companyId) return NextResponse.json({ error: 'Missing params' }, { status: 400 });
 
+    const adminDb = getAdminDb();
     const tokenDoc = adminDb.collection('invites').doc();
     const token = tokenDoc.id;
     const expiresAt = Date.now() + 1000 * 60 * 60 * 24 * 7; // 7 days

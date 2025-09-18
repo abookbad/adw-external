@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { adminDb } from '@/lib/firebase/admin';
+import { getAdminDb } from '@/lib/firebase/admin';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: '2023-10-16',
@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
 
     let stripeCustomerId = customerId || null;
     let companyName: string | null = null;
+    const adminDb = getAdminDb();
     const docRef = adminDb.collection('companies').doc(companyId);
     const snap = await docRef.get();
     const existing = snap.exists ? (snap.get('stripeCustomerId') as string | undefined) : undefined;
@@ -28,7 +29,7 @@ export async function POST(req: NextRequest) {
         name: companyName || undefined,
         metadata: { companyId },
       });
-      await adminDb.collection('companies').doc(companyId).set({ stripeCustomerId: (customer as any).id }, { merge: true });
+      await getAdminDb().collection('companies').doc(companyId).set({ stripeCustomerId: (customer as any).id }, { merge: true });
     } else if (companyName && !(customer as Stripe.Customer).name) {
       // Ensure existing customer shows up by name in Dashboard
       await stripe.customers.update((customer as any).id, { name: companyName });

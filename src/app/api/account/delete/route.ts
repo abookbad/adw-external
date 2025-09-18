@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { adminDb, adminAuth } from '@/lib/firebase/admin';
+import { getAdminDb, getAdminAuth } from '@/lib/firebase/admin';
 
 export async function POST(req: NextRequest) {
   try {
@@ -7,6 +7,7 @@ export async function POST(req: NextRequest) {
     if (!uid) return NextResponse.json({ error: 'uid required' }, { status: 400 });
 
     // Find memberships
+    const adminDb = getAdminDb();
     const membershipsSnap = await adminDb.collection('memberships').where('userId', '==', uid).get();
     const memberships = membershipsSnap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }));
 
@@ -34,7 +35,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Finally delete auth user
-    await adminAuth.deleteUser(uid);
+    await getAdminAuth().deleteUser(uid);
 
     return NextResponse.json({ ok: true });
   } catch (e: any) {

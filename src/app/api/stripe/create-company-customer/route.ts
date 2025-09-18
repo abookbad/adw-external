@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { adminDb } from '@/lib/firebase/admin';
+import { getAdminDb } from '@/lib/firebase/admin';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: '2023-10-16',
@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
     const { companyId, companyName, email } = await req.json();
     if (!companyId) return NextResponse.json({ error: 'companyId required' }, { status: 400 });
 
+    const adminDb = getAdminDb();
     const ref = adminDb.collection('companies').doc(companyId);
     const snap = await ref.get();
     const existingId = snap.exists ? (snap.get('stripeCustomerId') as string | undefined) : undefined;
