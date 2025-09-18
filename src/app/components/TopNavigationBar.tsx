@@ -26,15 +26,15 @@ export const TopNavigationBar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 p-10 mt-4 max-w-7xl w-auto 
+    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 p-4 sm:p-6 md:p-10 mt-2 sm:mt-4 max-w-7xl w-auto 
                   bg-slate-900/70 backdrop-blur-md rounded-2xl shadow-2xl shadow-cyan-400/40 border border-slate-700/50 
                   font-[family-name:var(--font-geist-sans)]">
       <div className="flex items-center justify-between">
         <Logo />
-        <ul className="flex items-center space-x-8 ml-48">
+        <ul className="flex items-center space-x-4 sm:space-x-6 md:space-x-8 ml-4 sm:ml-12 md:ml-48 overflow-x-auto whitespace-nowrap">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-lg tracking-wider uppercase">
+              <Link href={item.href} className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-sm sm:text-base md:text-lg tracking-wider uppercase">
                 {item.name}
               </Link>
             </li>
@@ -46,11 +46,11 @@ export const TopNavigationBar = () => {
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <div className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-lg tracking-wider uppercase cursor-pointer flex items-center gap-1">
+            <div className="text-gray-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] text-sm sm:text-base md:text-lg tracking-wider uppercase cursor-pointer flex items-center gap-1">
               <Link href="/services">Services</Link>
               <motion.svg
-                width="12"
-                height="12"
+                width="10"
+                height="10"
                 viewBox="0 0 12 12"
                 fill="currentColor"
                 animate={{ rotate: isServicesOpen ? 180 : 0 }}
@@ -104,10 +104,10 @@ export const TopNavigationBar = () => {
             </AnimatePresence>
           </li>
           <li className="relative flex items-center">
-            <Link href="/login" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1.5 px-6 rounded-md text-sm transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">
+            <Link href="/login" className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1 px-4 sm:px-6 rounded-md text-sm transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40">
               Login
             </Link>
-            <Link href="/register" className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[10px] text-slate-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+            <Link href="/register" className="absolute top-full mt-1 left-0 right-0 block w-full text-center whitespace-nowrap text-[10px] sm:text-[11px] text-slate-300 hover:text-green-400 transition-colors font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
               Or Register
             </Link>
           </li>

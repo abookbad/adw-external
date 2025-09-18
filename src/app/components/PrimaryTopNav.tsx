@@ -45,8 +45,8 @@ export const PrimaryTopNav = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950 text-white py-4 border-b border-slate-700/50 hover:bg-slate-900/95 hover:border-cyan-400/30 transition-all duration-300">
-      <div className="container mx-auto flex justify-center items-center px-2 xs:px-4 max-w-full">
-        <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10 mx-auto">
+      <div className="container mx-auto flex justify-center items-center px-2 xs:px-4 max-w-full w-full overflow-x-auto">
+        <ul className="flex items-center space-x-3 xs:space-x-5 sm:space-x-7 md:space-x-10 mx-auto whitespace-nowrap">
           {/* Logo */}
           <li className="flex items-center">
             <Link href="/" aria-label="ADW Home" className="inline-flex items-center p-1 sm:p-2 group">
@@ -168,7 +168,7 @@ export const PrimaryTopNav = () => {
             <li className="relative flex items-center">
               <Link 
                 href="/login" 
-                className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1.5 px-6 xs:px-7 sm:px-8 rounded-md text-sm xs:text-sm sm:text-base md:text-lg transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40"
+                className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase py-1 px-4 sm:px-6 md:px-8 rounded-md text-sm xs:text-sm sm:text-base md:text-lg transition-colors shadow-lg shadow-blue-500/40 hover:shadow-blue-400/60 ring-1 ring-blue-400/40"
               >
                 Login
               </Link>
