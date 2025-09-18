@@ -29,8 +29,8 @@ function getClientIp(req: NextRequest): string | undefined {
   if (realIp) return realIp
 
   try {
-    // @ts-expect-error Accessing non-standard property when available in some runtimes
-    const directIp = normalizeIp((req as any).ip as string | undefined)
+    const maybeReq = req as unknown as { ip?: string }
+    const directIp = normalizeIp(maybeReq.ip)
     if (directIp) return directIp
   } catch {}
 

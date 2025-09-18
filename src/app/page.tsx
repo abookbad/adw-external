@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import HomePageClientContent from './components/HomePageClientContent';
 import TrackBioClick from './components/TrackBioClick';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: "Innovative AI & Technology Solutions | Agency Dev Works",
@@ -33,7 +34,9 @@ export const metadata: Metadata = {
 
 export default function NewHomePage() {
   return <>
-    <TrackBioClick />
+    <Suspense fallback={null}>
+      <TrackBioClick />
+    </Suspense>
     <HomePageClientContent />
   </>;
 }
