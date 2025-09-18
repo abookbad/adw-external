@@ -11,12 +11,14 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID as string,
 };
 
-// Helpful runtime guard for common setup issues (esp. Google popup sign-in)
-if (!firebaseConfig.apiKey) {
-  throw new Error('Missing NEXT_PUBLIC_FIREBASE_API_KEY');
-}
-if (!firebaseConfig.authDomain) {
-  throw new Error('Missing NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN (e.g. your-project.firebaseapp.com). Google sign-in requires a valid authDomain.');
+// Helpful runtime guard for common setup issues (only on the client to avoid breaking prerender)
+if (typeof window !== 'undefined') {
+  if (!firebaseConfig.apiKey) {
+    throw new Error('Missing NEXT_PUBLIC_FIREBASE_API_KEY');
+  }
+  if (!firebaseConfig.authDomain) {
+    throw new Error('Missing NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN (e.g. your-project.firebaseapp.com). Google sign-in requires a valid authDomain.');
+  }
 }
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
