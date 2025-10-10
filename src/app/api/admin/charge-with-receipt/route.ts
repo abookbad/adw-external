@@ -94,6 +94,8 @@ export async function POST(req: NextRequest) {
     let last4: string | undefined;
     let expMonth: number | undefined;
     let expYear: number | undefined;
+    let chargeId: string | undefined;
+    let chargeCreatedAtMs: number | undefined;
 
     const latestChargeId = (pi as any).latest_charge as string | undefined;
     if (latestChargeId) {
@@ -104,6 +106,8 @@ export async function POST(req: NextRequest) {
         last4 = pmDetails?.last4;
         expMonth = pmDetails?.exp_month;
         expYear = pmDetails?.exp_year;
+        chargeId = ch.id;
+        chargeCreatedAtMs = (ch.created ? ch.created * 1000 : undefined) as any;
       } catch {}
     }
 
@@ -137,6 +141,7 @@ export async function POST(req: NextRequest) {
       )
       .join('');
 
+    const paymentDateStr = new Date(chargeCreatedAtMs || Date.now()).toLocaleString();
     const html = `<!doctype html>
 <html>
   <head>
@@ -163,6 +168,12 @@ export async function POST(req: NextRequest) {
                   <p style="margin:0 0 12px;color:#cbd5e1;">Amount: <strong>$${moneyFromCents(totalCents)} ${curr.toUpperCase()}</strong></p>
                   ${brand && last4 ? `<p style="margin:0 0 12px;color:#94a3b8;">Card: ${brand.toUpperCase()} •••• ${last4}${expMonth && expYear ? ` (exp ${expMonth}/${expYear})` : ''}</p>` : ''}
                   ${memo ? `<p style=\"margin:0 0 12px;color:#cbd5e1;\">Memo: ${String(memo).slice(0, 200)}</p>` : ''}
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:12px 0 16px;border-collapse:collapse;">
+                    <tr>
+                      <td style="color:#94a3b8;font-size:12px;">Transaction ID: <span style="color:#e2e8f0;">${chargeId || pi.id}</span></td>
+                      <td align="right" style="color:#94a3b8;font-size:12px;">Date: <span style="color:#e2e8f0;">${paymentDateStr}</span></td>
+                    </tr>
+                  </table>
                   <div style="margin:16px 0 8px;color:#e2e8f0;font-weight:600;">Line Items</div>
                   <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #334155;border-radius:8px;overflow:hidden;">
                     <tr style="background:#0b1220;">
@@ -174,7 +185,7 @@ export async function POST(req: NextRequest) {
                     ${itemsRows}
                     ${feeCents > 0 ? `
                     <tr>
-                      <td style=\"padding:8px 12px;border-top:1px solid #334155;color:#e2e8f0;\">Credit Card Fee (${pct}%)</td>
+                      <td style=\"padding:8px 12px;border-top:1px solid #334155;color:#e2e8f0;\">Processing Fee (${pct}%)</td>
                       <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#cbd5e1;\">1</td>
                       <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#cbd5e1;\">$${moneyFromCents(feeCents)}</td>
                       <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#e2e8f0;\">$${moneyFromCents(feeCents)}</td>
@@ -184,7 +195,14 @@ export async function POST(req: NextRequest) {
                       <td align="right" style="padding:12px;color:#e2e8f0;font-weight:700;">$${moneyFromCents(totalCents)}</td>
                     </tr>
                   </table>
+                  <div style="margin-top:16px;color:#94a3b8;font-size:12px;">This charge will appear on your statement as <strong style="color:#e2e8f0;">AGENCY DEVWORKS</strong>.</div>
+                  <div style="margin-top:8px;color:#94a3b8;font-size:12px;">Questions? Contact us at <a href="mailto:official@agencydevworks.ai" style="color:#93c5fd;">official@agencydevworks.ai</a> or +1 888-869-1662.</div>
+                  <div style="margin-top:4px;color:#94a3b8;font-size:12px;">Business address: 20830 Stevens Creek Blvd #1103, Cupertino, 95014</div>
+                  <div style="margin-top:8px;color:#94a3b8;font-size:12px;">Refund policy: <a href="${origin}/terms/billing" style="color:#93c5fd;">View details</a></div>
                 </td>
+              </tr>
+              <tr>
+                <td style="padding:16px;text-align:center;color:#64748b;font-size:11px;border-top:1px solid #334155;">Secured by Stripe • © ${new Date().getFullYear()} Agency DevWorks</td>
               </tr>
             </table>
           </td>
@@ -208,7 +226,33 @@ export async function POST(req: NextRequest) {
       html,
     });
 
-    return NextResponse.json({ id: pi.id, status: pi.status });
+    // Persist receipt for later viewing
+    try {
+      const receiptDoc = {
+        companyId,
+        userEmail,
+        totalCents,
+        currency: curr,
+        feePercent: pct,
+        feeCents,
+        subtotalCents,
+        lineItems: normalized,
+        memo: memo ? String(memo).slice(0, 200) : '',
+        paymentIntentId: pi.id,
+        chargeId: chargeId || null,
+        chargedAt: chargeCreatedAtMs || Date.now(),
+        cardBrand: brand || null,
+        cardLast4: last4 || null,
+        expMonth: expMonth || null,
+        expYear: expYear || null,
+        createdAt: Date.now(),
+      } as const;
+      const db = getAdminDb();
+      const ref = await db.collection('receipts').add(receiptDoc);
+      return NextResponse.json({ id: pi.id, status: pi.status, receiptId: ref.id });
+    } catch {
+      return NextResponse.json({ id: pi.id, status: pi.status });
+    }
   } catch (e: any) {
     const status = e?.status || 500;
     return NextResponse.json({ error: e?.message || 'Charge failed' }, { status });

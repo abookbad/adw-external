@@ -129,15 +129,26 @@ export default function BillingClient() {
   const [companyId, setCompanyId] = useState<string | null>(null);
   const [methods, setMethods] = useState<Array<{ id: string; brand?: string; last4?: string; exp_month?: number; exp_year?: number; isDefault?: boolean }>>([]);
   const [showForm, setShowForm] = useState(false);
+  const [receipts, setReceipts] = useState<Array<{ id: string; createdAt: number; totalCents: number; currency: string; numLineItems: number; cardLast4?: string | null; cardBrand?: string | null }>>([]);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user || !selectedCompany.id) return;
     // Load current PM
     const qs = new URLSearchParams({ email: user.email || '', companyId: selectedCompany.id || '' });
     fetch(`/api/stripe/payment-methods?${qs.toString()}`)
       .then((r) => r.json())
       .then((d) => setMethods(d.paymentMethods || []));
-  }, [user]);
+    // Load receipts
+    (async () => {
+      try {
+        const token = await user.getIdToken();
+        const listQs = new URLSearchParams({ companyId: selectedCompany.id || '' });
+        const res = await fetch(`/api/billing/receipts?${listQs.toString()}`, { headers: { Authorization: `Bearer ${token}` } });
+        const data = await res.json();
+        setReceipts(data.receipts || []);
+      } catch {}
+    })();
+  }, [user, selectedCompany.id]);
 
   async function beginAddOrUpdateCard() {
     if (!user) return;
@@ -213,6 +224,46 @@ export default function BillingClient() {
           }} />
         </Elements>
       )}
+
+      <div className="mt-8">
+        <h2 className="text-white font-semibold mb-2">Past Transactions</h2>
+        <div className="overflow-x-auto border border-slate-800 rounded-md">
+          <table className="min-w-full text-sm">
+            <thead className="bg-slate-900/60">
+              <tr>
+                <th className="text-left text-slate-300 px-3 py-2">Date</th>
+                <th className="text-right text-slate-300 px-3 py-2">Line Items</th>
+                <th className="text-right text-slate-300 px-3 py-2">Total</th>
+                <th className="text-left text-slate-300 px-3 py-2">Card</th>
+                <th className="px-3 py-2"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {receipts.map((r) => {
+                const date = new Date(r.createdAt || 0).toLocaleString();
+                const total = `$${(r.totalCents / 100).toFixed(2)} ${r.currency?.toUpperCase() || 'USD'}`;
+                const card = r.cardBrand ? `${String(r.cardBrand).toUpperCase()} •••• ${r.cardLast4 || ''}` : (r.cardLast4 ? `•••• ${r.cardLast4}` : '—');
+                return (
+                  <tr key={r.id} className="border-t border-slate-800">
+                    <td className="px-3 py-2 text-slate-200">{date}</td>
+                    <td className="px-3 py-2 text-right text-slate-300">{r.numLineItems}</td>
+                    <td className="px-3 py-2 text-right text-slate-200">{total}</td>
+                    <td className="px-3 py-2 text-slate-300">{card}</td>
+                    <td className="px-3 py-2 text-right">
+                      <a href={`/portal/billing/receipt/${r.id}`} className="text-blue-400 hover:text-blue-300 underline">View</a>
+                    </td>
+                  </tr>
+                );
+              })}
+              {receipts.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="px-3 py-4 text-center text-slate-400">No transactions yet</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
