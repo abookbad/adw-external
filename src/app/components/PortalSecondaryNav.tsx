@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { useEffect, useState } from 'react';
 import { loadUserCompanySummaries } from '@/lib/firebase/firestore';
 
-const items = [
+const baseItems = [
   { name: 'Dashboard', href: '/portal' },
   { name: 'Account Settings', href: '/portal/account-settings' },
   { name: 'Billing', href: '/portal/billing' },
@@ -48,6 +48,15 @@ export default function PortalSecondaryNav() {
       setSelectedCompany({ id: firstId, name: deDuped[0]?.name ?? null });
     });
   }, [user]);
+  const isAdmin = (() => {
+    const raw = process.env.NEXT_PUBLIC_ADMIN_EMAILS || '';
+    const allowed = new Set(raw.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
+    const email = (user?.email || '').toLowerCase();
+    return email && allowed.has(email);
+  })();
+
+  const items = isAdmin ? [...baseItems, { name: 'Admin', href: '/portal/admin' }] : baseItems;
+
   return (
     <div className="sticky top-28 z-40 -mx-4 sm:-mx-6 lg:-mx-8 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
