@@ -30,7 +30,7 @@ function moneyFromCents(cents: number) {
 export async function POST(req: NextRequest) {
   try {
     await requireAdmin(req as unknown as Request);
-    const { userEmail, companyId, paymentMethodId, currency, lineItems, capture, memo } = await req.json();
+    const { userEmail, companyId, paymentMethodId, currency, lineItems, capture, memo, feePercent } = await req.json();
 
     if (!userEmail || !companyId) {
       return NextResponse.json({ error: 'userEmail and companyId are required' }, { status: 400 });
@@ -45,7 +45,10 @@ export async function POST(req: NextRequest) {
       unitPriceCents: Math.max(0, Math.round(Number(li.unitPriceCents || 0))),
     }));
 
-    const totalCents = normalized.reduce((sum, li) => sum + li.quantity * li.unitPriceCents, 0);
+    const subtotalCents = normalized.reduce((sum, li) => sum + li.quantity * li.unitPriceCents, 0);
+    const pct = Math.max(0, Math.min(100, Number(feePercent || 0)));
+    const feeCents = Math.round(subtotalCents * pct / 100);
+    const totalCents = subtotalCents + feeCents;
     if (totalCents <= 0) {
       return NextResponse.json({ error: 'Total must be greater than zero' }, { status: 400 });
     }
@@ -107,6 +110,20 @@ export async function POST(req: NextRequest) {
     // Build receipt email
     const origin = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
     const companyName = (companySnap.exists && (companySnap.get('name') as string)) || companyId;
+    // Look up recipient name by email (fallback to email local part)
+    let recipientName = '';
+    try {
+      const q = await getAdminDb().collection('users').where('email', '==', userEmail).limit(1).get();
+      if (!q.empty) {
+        const u = q.docs[0];
+        const firstName = (u.get('firstName') as string) || '';
+        const lastName = (u.get('lastName') as string) || '';
+        recipientName = `${firstName} ${lastName}`.trim();
+      }
+    } catch {}
+    if (!recipientName) {
+      recipientName = (userEmail.split('@')[0] || 'there');
+    }
 
     const itemsRows = normalized
       .map(
@@ -120,11 +137,18 @@ export async function POST(req: NextRequest) {
       )
       .join('');
 
-    const html = `
-      <table width="100%" cellpadding="0" cellspacing="0" style="background:#0b1220;padding:24px;color:#e2e8f0;font-family:Segoe UI,Arial,sans-serif;">
+    const html = `<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body style="margin:0;padding:0;background:#0b1220;">
+    <center style="width:100%;background:#0b1220;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Arial,sans-serif;">
         <tr>
-          <td align="center">
-            <table width="640" cellpadding="0" cellspacing="0" style="background:#0f172a;border:1px solid #334155;border-radius:12px;overflow:hidden;">
+          <td align="center" style="padding:24px;">
+            <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="background:#0f172a;border:1px solid #334155;border-radius:12px;overflow:hidden;">
               <tr>
                 <td style="padding:24px;text-align:center;background:#0b1220;border-bottom:1px solid #334155;">
                   <img src="${origin}/adw_final.png" alt="ADW" width="64" height="64" style="display:block;margin:0 auto 8px;" />
@@ -134,10 +158,11 @@ export async function POST(req: NextRequest) {
               <tr>
                 <td style="padding:28px;">
                   <h1 style="margin:0 0 12px;font-size:20px;color:#fff;letter-spacing:.08em;text-transform:uppercase;">Payment Receipt</h1>
+                  <p style="margin:0 0 12px;color:#cbd5e1;">Hello ${recipientName},</p>
                   <p style="margin:0 0 12px;color:#cbd5e1;">Thank you for your payment to <strong>Agency DevWorks</strong> for <strong>${companyName}</strong>.</p>
                   <p style="margin:0 0 12px;color:#cbd5e1;">Amount: <strong>$${moneyFromCents(totalCents)} ${curr.toUpperCase()}</strong></p>
                   ${brand && last4 ? `<p style="margin:0 0 12px;color:#94a3b8;">Card: ${brand.toUpperCase()} •••• ${last4}${expMonth && expYear ? ` (exp ${expMonth}/${expYear})` : ''}</p>` : ''}
-                  ${memo ? `<p style="margin:0 0 12px;color:#cbd5e1;">Memo: ${String(memo).slice(0, 200)}</p>` : ''}
+                  ${memo ? `<p style=\"margin:0 0 12px;color:#cbd5e1;\">Memo: ${String(memo).slice(0, 200)}</p>` : ''}
                   <div style="margin:16px 0 8px;color:#e2e8f0;font-weight:600;">Line Items</div>
                   <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #334155;border-radius:8px;overflow:hidden;">
                     <tr style="background:#0b1220;">
@@ -147,6 +172,13 @@ export async function POST(req: NextRequest) {
                       <th align="right" style="padding:8px 12px;color:#cbd5e1;font-weight:600;">Total</th>
                     </tr>
                     ${itemsRows}
+                    ${feeCents > 0 ? `
+                    <tr>
+                      <td style=\"padding:8px 12px;border-top:1px solid #334155;color:#e2e8f0;\">Credit Card Fee (${pct}%)</td>
+                      <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#cbd5e1;\">1</td>
+                      <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#cbd5e1;\">$${moneyFromCents(feeCents)}</td>
+                      <td align=\"right\" style=\"padding:8px 12px;border-top:1px solid #334155;color:#e2e8f0;\">$${moneyFromCents(feeCents)}</td>
+                    </tr>` : ''}
                     <tr>
                       <td colspan="3" align="right" style="padding:12px;color:#94a3b8;">Total</td>
                       <td align="right" style="padding:12px;color:#e2e8f0;font-weight:700;">$${moneyFromCents(totalCents)}</td>
@@ -158,7 +190,9 @@ export async function POST(req: NextRequest) {
           </td>
         </tr>
       </table>
-    `;
+    </center>
+  </body>
+  </html>`;
 
     // Send receipt
     const transporter = buildTransporter();

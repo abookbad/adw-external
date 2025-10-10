@@ -20,11 +20,18 @@ export default function ChargeClient() {
     { id: `${Date.now()}`, description: '', quantity: 1, unitPrice: '' },
   ]);
   const [memo, setMemo] = useState('');
+  const [feePercent, setFeePercent] = useState<string>('');
   const [submitting, setSubmitting] = useState(false);
-  const totalCents = useMemo(() => items.reduce((sum, li) => {
-    const unit = Math.round((parseFloat(li.unitPrice || '0') || 0) * 100);
+  const baseSubtotalCents = useMemo(() => items.reduce((sum, li) => {
+    const unit = Math.round((parseFloat(li.unitPrice || '') || 0) * 100);
     return sum + (li.quantity || 0) * unit;
   }, 0), [items]);
+  const feeCents = useMemo(() => {
+    const pct = Number(feePercent || 0);
+    if (!pct || pct < 0) return 0;
+    return Math.round(baseSubtotalCents * pct / 100);
+  }, [feePercent, baseSubtotalCents]);
+  const totalCents = baseSubtotalCents + feeCents;
 
   function updateItem(id: string, partial: Partial<LineItem>) {
     setItems((prev) => prev.map((it) => (it.id === id ? { ...it, ...partial } : it)));
@@ -48,7 +55,7 @@ export default function ChargeClient() {
       const res = await fetch('/api/admin/charge-with-receipt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ userEmail: email, companyId, paymentMethodId: paymentMethodId || undefined, currency: 'usd', lineItems, memo }),
+        body: JSON.stringify({ userEmail: email, companyId, paymentMethodId: paymentMethodId || undefined, currency: 'usd', lineItems, memo, feePercent: feePercent ? Number(feePercent) : 0 }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || 'Failed to charge');
@@ -88,9 +95,8 @@ export default function ChargeClient() {
               <input
                 className="sm:col-span-1 bg-slate-800 text-white text-sm border border-slate-700 rounded-md px-3 py-2"
                 placeholder="Unit Price (USD)"
-                type="number"
-                step="0.01"
-                min={0}
+                type="text"
+                inputMode="decimal"
                 value={it.unitPrice}
                 onChange={(e) => updateItem(it.id, { unitPrice: e.target.value })}
               />
@@ -98,6 +104,23 @@ export default function ChargeClient() {
             </div>
           ))}
           <button type="button" className="text-xs px-3 py-2 rounded-md bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700" onClick={addItem}>Add Item</button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <div className="sm:col-span-1">
+            <label className="block text-xs text-slate-400 mb-1">Card Fee %</label>
+            <select
+              className="w-full bg-slate-800 text-white text-sm border border-slate-700 rounded-md px-3 py-2"
+              value={feePercent}
+              onChange={(e) => setFeePercent(e.target.value)}
+            >
+              <option value="">No fee</option>
+              <option value="1">1%</option>
+              <option value="2">2%</option>
+              <option value="3">3%</option>
+              <option value="4">4%</option>
+              <option value="5">5%</option>
+            </select>
+          </div>
         </div>
         <div>
           <textarea
