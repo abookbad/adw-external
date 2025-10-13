@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Comfortaa, Lato } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import AuthProvider from './components/AuthProvider';
+import { Analytics } from "@vercel/analytics/next"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,6 +97,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${comfortaa.variable} ${lato.variable} antialiased`}
@@ -115,6 +118,7 @@ export default function RootLayout({
         <AuthProvider>
           {children}
         </AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
