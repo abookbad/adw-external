@@ -59,6 +59,7 @@ function main() {
           // music-metadata not installed; skip extraction
         }
       }
+      
       let image;
       if (coverFs) {
         image = `/ADW-music/${encodeURIComponent(genre)}/${encodeURIComponent(path.basename(coverFs))}`;
