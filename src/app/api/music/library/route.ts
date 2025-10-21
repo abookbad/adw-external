@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { parseFile } from 'music-metadata';
 
 // Node runtime required for fs
 export const runtime = 'nodejs';
@@ -37,24 +36,13 @@ export async function GET(_req: NextRequest) {
     for (const genre of genres) {
       const dir = path.join(base, genre);
       const files = fs.readdirSync(dir, { withFileTypes: true }).filter((d) => d.isFile()).map((d) => d.name);
-      const tracks = [] as Array<{ title: string; src: string; image?: string }>;
+      const tracks: Array<{ title: string; src: string; image?: string }> = [];
       for (const file of files) {
         if (!isAudioFile(file)) continue;
         const title = path.parse(file).name;
         const src = `/ADW-music/${encodeURIComponent(genre)}/${encodeURIComponent(file)}`;
         const coverFs = possibleCoverFor(path.parse(file).name, dir);
-        let image = coverFs ? `/ADW-music/${encodeURIComponent(genre)}/${encodeURIComponent(path.basename(coverFs))}` : undefined;
-        if (!image) {
-          try {
-            const meta = await parseFile(path.join(dir, file));
-            const pic = meta.common.picture && meta.common.picture[0];
-            if (pic && pic.data) {
-              const b64 = Buffer.from(pic.data).toString('base64');
-              const mime = pic.format || 'image/jpeg';
-              image = `data:${mime};base64,${b64}`;
-            }
-          } catch {}
-        }
+        const image = coverFs ? `/ADW-music/${encodeURIComponent(genre)}/${encodeURIComponent(path.basename(coverFs))}` : undefined;
         tracks.push({ title, src, image });
       }
       if (tracks.length) library[genre] = tracks;
