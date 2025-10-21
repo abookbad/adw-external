@@ -3,405 +3,502 @@
     "Ambient - Focus": [
       {
         "title": "Aurora Dreams",
-        "src": "/ADW-music/Ambient%20-%20Focus/Aurora%20Dreams.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Aurora%20Dreams.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Aurora%20Dreams-cover.jpg"
       },
       {
         "title": "Celestial Tide",
-        "src": "/ADW-music/Ambient%20-%20Focus/Celestial%20Tide.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Celestial%20Tide.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Celestial%20Tide-cover.jpg"
       },
       {
         "title": "Crystal Flow",
-        "src": "/ADW-music/Ambient%20-%20Focus/Crystal%20Flow.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Crystal%20Flow.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Crystal%20Flow-cover.jpg"
       },
       {
         "title": "Driftwood Echoes",
-        "src": "/ADW-music/Ambient%20-%20Focus/Driftwood%20Echoes.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Driftwood%20Echoes.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Driftwood%20Echoes-cover.jpg"
       },
       {
         "title": "Echo Valley",
-        "src": "/ADW-music/Ambient%20-%20Focus/Echo%20Valley.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Echo%20Valley.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Echo%20Valley-cover.jpg"
       },
       {
         "title": "Frozen Horizon",
-        "src": "/ADW-music/Ambient%20-%20Focus/Frozen%20Horizon.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Frozen%20Horizon.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Frozen%20Horizon-cover.jpg"
       },
       {
         "title": "Infinite Stillness",
-        "src": "/ADW-music/Ambient%20-%20Focus/Infinite%20Stillness.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Infinite%20Stillness.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Infinite%20Stillness-cover.jpg"
       },
       {
         "title": "Mirage Fields",
-        "src": "/ADW-music/Ambient%20-%20Focus/Mirage%20Fields.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Mirage%20Fields.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Mirage%20Fields-cover.jpg"
       },
       {
         "title": "Silent Cosmos",
-        "src": "/ADW-music/Ambient%20-%20Focus/Silent%20Cosmos.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Silent%20Cosmos.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Silent%20Cosmos-cover.jpg"
       },
       {
         "title": "Starlight Drift",
-        "src": "/ADW-music/Ambient%20-%20Focus/Starlight%20Drift.mp3"
+        "src": "/ADW-music/Ambient%20-%20Focus/Starlight%20Drift.mp3",
+        "image": "/ADW-music/Ambient%20-%20Focus/Starlight%20Drift-cover.jpg"
       }
     ],
     "Classical - Instrumental": [
       {
         "title": "Cathedral Light",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Cathedral%20Light.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Cathedral%20Light.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Cathedral%20Light-cover.jpg"
       },
       {
         "title": "Chamber Dawn",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Chamber%20Dawn.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Chamber%20Dawn.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Chamber%20Dawn-cover.jpg"
       },
       {
         "title": "Echoes of Baroque",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Echoes%20of%20Baroque.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Echoes%20of%20Baroque.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Echoes%20of%20Baroque-cover.jpg"
       },
       {
         "title": "Golden Sonata",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Golden%20Sonata.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Golden%20Sonata.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Golden%20Sonata-cover.jpg"
       },
       {
         "title": "Ivory Reflections",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Ivory%20Reflections.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Ivory%20Reflections.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Ivory%20Reflections-cover.jpg"
       },
       {
         "title": "Midnight Prelude",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Midnight%20Prelude.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Midnight%20Prelude.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Midnight%20Prelude-cover.jpg"
       },
       {
         "title": "Moonlit Waltz",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Moonlit%20Waltz.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Moonlit%20Waltz.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Moonlit%20Waltz-cover.jpg"
       },
       {
         "title": "Serenade in G",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Serenade%20in%20G.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Serenade%20in%20G.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Serenade%20in%20G-cover.jpg"
       },
       {
         "title": "Winds of Elegy",
-        "src": "/ADW-music/Classical%20-%20Instrumental/Winds%20of%20Elegy.mp3"
+        "src": "/ADW-music/Classical%20-%20Instrumental/Winds%20of%20Elegy.mp3",
+        "image": "/ADW-music/Classical%20-%20Instrumental/Winds%20of%20Elegy-cover.jpg"
       }
     ],
     "Deep House": [
       {
         "title": "Crystal Waves",
-        "src": "/ADW-music/Deep%20House/Crystal%20Waves.mp3"
+        "src": "/ADW-music/Deep%20House/Crystal%20Waves.mp3",
+        "image": "/ADW-music/Deep%20House/Crystal%20Waves-cover.jpg"
       },
       {
         "title": "Digital Horizon",
-        "src": "/ADW-music/Deep%20House/Digital%20Horizon.mp3"
+        "src": "/ADW-music/Deep%20House/Digital%20Horizon.mp3",
+        "image": "/ADW-music/Deep%20House/Digital%20Horizon-cover.jpg"
       },
       {
         "title": "Eclipse Motion",
-        "src": "/ADW-music/Deep%20House/Eclipse%20Motion.mp3"
+        "src": "/ADW-music/Deep%20House/Eclipse%20Motion.mp3",
+        "image": "/ADW-music/Deep%20House/Eclipse%20Motion-cover.jpg"
       },
       {
         "title": "Electric Mirage",
-        "src": "/ADW-music/Deep%20House/Electric%20Mirage.mp3"
+        "src": "/ADW-music/Deep%20House/Electric%20Mirage.mp3",
+        "image": "/ADW-music/Deep%20House/Electric%20Mirage-cover.jpg"
       },
       {
         "title": "Midnight Drive",
-        "src": "/ADW-music/Deep%20House/Midnight%20Drive.mp3"
+        "src": "/ADW-music/Deep%20House/Midnight%20Drive.mp3",
+        "image": "/ADW-music/Deep%20House/Midnight%20Drive-cover.jpg"
       },
       {
         "title": "Neon Pulse",
-        "src": "/ADW-music/Deep%20House/Neon%20Pulse.mp3"
+        "src": "/ADW-music/Deep%20House/Neon%20Pulse.mp3",
+        "image": "/ADW-music/Deep%20House/Neon%20Pulse-cover.jpg"
       },
       {
         "title": "Nocturnal Flow",
-        "src": "/ADW-music/Deep%20House/Nocturnal%20Flow.mp3"
+        "src": "/ADW-music/Deep%20House/Nocturnal%20Flow.mp3",
+        "image": "/ADW-music/Deep%20House/Nocturnal%20Flow-cover.jpg"
       },
       {
         "title": "Solar Rhythm",
-        "src": "/ADW-music/Deep%20House/Solar%20Rhythm.mp3"
+        "src": "/ADW-music/Deep%20House/Solar%20Rhythm.mp3",
+        "image": "/ADW-music/Deep%20House/Solar%20Rhythm-cover.jpg"
       },
       {
         "title": "Urban Mirage",
-        "src": "/ADW-music/Deep%20House/Urban%20Mirage.mp3"
+        "src": "/ADW-music/Deep%20House/Urban%20Mirage.mp3",
+        "image": "/ADW-music/Deep%20House/Urban%20Mirage-cover.jpg"
       },
       {
         "title": "Velvet Bass",
-        "src": "/ADW-music/Deep%20House/Velvet%20Bass.mp3"
+        "src": "/ADW-music/Deep%20House/Velvet%20Bass.mp3",
+        "image": "/ADW-music/Deep%20House/Velvet%20Bass-cover.jpg"
       }
     ],
     "Hip Hop": [
       {
         "title": "After Hours",
-        "src": "/ADW-music/Hip%20Hop/After%20Hours.mp3"
+        "src": "/ADW-music/Hip%20Hop/After%20Hours.mp3",
+        "image": "/ADW-music/Hip%20Hop/After%20Hours-cover.jpg"
       },
       {
         "title": "Broken Trust",
-        "src": "/ADW-music/Hip%20Hop/Broken%20Trust.mp3"
+        "src": "/ADW-music/Hip%20Hop/Broken%20Trust.mp3",
+        "image": "/ADW-music/Hip%20Hop/Broken%20Trust-cover.jpg"
       },
       {
         "title": "Cold November",
-        "src": "/ADW-music/Hip%20Hop/Cold%20November.mp3"
+        "src": "/ADW-music/Hip%20Hop/Cold%20November.mp3",
+        "image": "/ADW-music/Hip%20Hop/Cold%20November-cover.jpg"
       },
       {
         "title": "Empty Bottles",
-        "src": "/ADW-music/Hip%20Hop/Empty%20Bottles.mp3"
+        "src": "/ADW-music/Hip%20Hop/Empty%20Bottles.mp3",
+        "image": "/ADW-music/Hip%20Hop/Empty%20Bottles-cover.jpg"
       },
       {
         "title": "Faded Calls",
-        "src": "/ADW-music/Hip%20Hop/Faded%20Calls.mp3"
+        "src": "/ADW-music/Hip%20Hop/Faded%20Calls.mp3",
+        "image": "/ADW-music/Hip%20Hop/Faded%20Calls-cover.jpg"
       },
       {
         "title": "High Rise",
-        "src": "/ADW-music/Hip%20Hop/High%20Rise.mp3"
+        "src": "/ADW-music/Hip%20Hop/High%20Rise.mp3",
+        "image": "/ADW-music/Hip%20Hop/High%20Rise-cover.jpg"
       },
       {
         "title": "Lost in Toronto",
-        "src": "/ADW-music/Hip%20Hop/Lost%20in%20Toronto.mp3"
+        "src": "/ADW-music/Hip%20Hop/Lost%20in%20Toronto.mp3",
+        "image": "/ADW-music/Hip%20Hop/Lost%20in%20Toronto-cover.jpg"
       },
       {
         "title": "Night Shift",
-        "src": "/ADW-music/Hip%20Hop/Night%20Shift.mp3"
+        "src": "/ADW-music/Hip%20Hop/Night%20Shift.mp3",
+        "image": "/ADW-music/Hip%20Hop/Night%20Shift-cover.jpg"
       },
       {
         "title": "No Reply",
-        "src": "/ADW-music/Hip%20Hop/No%20Reply.mp3"
+        "src": "/ADW-music/Hip%20Hop/No%20Reply.mp3",
+        "image": "/ADW-music/Hip%20Hop/No%20Reply-cover.jpg"
       },
       {
         "title": "Shadows on the Wall",
-        "src": "/ADW-music/Hip%20Hop/Shadows%20on%20the%20Wall.mp3"
+        "src": "/ADW-music/Hip%20Hop/Shadows%20on%20the%20Wall.mp3",
+        "image": "/ADW-music/Hip%20Hop/Shadows%20on%20the%20Wall-cover.jpg"
       }
     ],
     "Jazz - Smooth Jazz": [
       {
         "title": "City Lights Swing",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/City%20Lights%20Swing.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/City%20Lights%20Swing.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/City%20Lights%20Swing-cover.jpg"
       },
       {
         "title": "Cool Blue",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Cool%20Blue.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Cool%20Blue.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Cool%20Blue-cover.jpg"
       },
       {
         "title": "Golden Sax",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Golden%20Sax.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Golden%20Sax.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Golden%20Sax-cover.jpg"
       },
       {
         "title": "Midnight Stroll",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Midnight%20Stroll.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Midnight%20Stroll.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Midnight%20Stroll-cover.jpg"
       },
       {
         "title": "Moonlit Groove",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Moonlit%20Groove.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Moonlit%20Groove.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Moonlit%20Groove-cover.jpg"
       },
       {
         "title": "Ocean Breeze",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Ocean%20Breeze.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Ocean%20Breeze.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Ocean%20Breeze-cover.jpg"
       },
       {
         "title": "Satin Groove",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Satin%20Groove.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Satin%20Groove.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Satin%20Groove-cover.jpg"
       },
       {
         "title": "Silver Mist",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Silver%20Mist.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Silver%20Mist.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Silver%20Mist-cover.jpg"
       },
       {
         "title": "Sunset Lounge",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Sunset%20Lounge.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Sunset%20Lounge.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Sunset%20Lounge-cover.jpg"
       },
       {
         "title": "Velvet Nights",
-        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Velvet%20Nights.mp3"
+        "src": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Velvet%20Nights.mp3",
+        "image": "/ADW-music/Jazz%20-%20Smooth%20Jazz/Velvet%20Nights-cover.jpg"
       }
     ],
     "Lo-Fi - Chillhop": [
       {
         "title": "City Rainwalk",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/City%20Rainwalk.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/City%20Rainwalk.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/City%20Rainwalk-cover.jpg"
       },
       {
         "title": "Coffee Steam",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Coffee%20Steam.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Coffee%20Steam.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Coffee%20Steam-cover.jpg"
       },
       {
         "title": "Dream Loop",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Dream%20Loop.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Dream%20Loop.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Dream%20Loop-cover.jpg"
       },
       {
         "title": "Faded Pages",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Faded%20Pages.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Faded%20Pages.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Faded%20Pages-cover.jpg"
       },
       {
         "title": "Golden Hour",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Golden%20Hour.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Golden%20Hour.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Golden%20Hour-cover.jpg"
       },
       {
         "title": "Late Night Bus Ride",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Late%20Night%20Bus%20Ride.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Late%20Night%20Bus%20Ride.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Late%20Night%20Bus%20Ride-cover.jpg"
       },
       {
         "title": "Misty Streetlights",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Misty%20Streetlights.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Misty%20Streetlights.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Misty%20Streetlights-cover.jpg"
       },
       {
         "title": "Moonlit Desk",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Moonlit%20Desk.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Moonlit%20Desk.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Moonlit%20Desk-cover.jpg"
       },
       {
         "title": "Neon Nights",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Neon%20Nights.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Neon%20Nights.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Neon%20Nights-cover.jpg"
       },
       {
         "title": "Notebook Scribbles",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Notebook%20Scribbles.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Notebook%20Scribbles.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Notebook%20Scribbles-cover.jpg"
       },
       {
         "title": "Old Photographs",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Old%20Photographs.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Old%20Photographs.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Old%20Photographs-cover.jpg"
       },
       {
         "title": "Quiet Corner",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Quiet%20Corner.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Quiet%20Corner.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Quiet%20Corner-cover.jpg"
       },
       {
         "title": "Rain on Glass",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Rain%20on%20Glass.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Rain%20on%20Glass.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Rain%20on%20Glass-cover.jpg"
       },
       {
         "title": "Retro Cassette",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Retro%20Cassette.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Retro%20Cassette.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Retro%20Cassette-cover.jpg"
       },
       {
         "title": "Silent Streets",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Silent%20Streets.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Silent%20Streets.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Silent%20Streets-cover.jpg"
       },
       {
         "title": "Study Vibes",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Study%20Vibes.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Study%20Vibes.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Study%20Vibes-cover.jpg"
       },
       {
         "title": "Sunday Mornings",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Sunday%20Mornings.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Sunday%20Mornings.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Sunday%20Mornings-cover.jpg"
       },
       {
         "title": "Warm Blanket",
-        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Warm%20Blanket.mp3"
+        "src": "/ADW-music/Lo-Fi%20-%20Chillhop/Warm%20Blanket.mp3",
+        "image": "/ADW-music/Lo-Fi%20-%20Chillhop/Warm%20Blanket-cover.jpg"
       }
     ],
     "Pop - Top Hits": [
       {
         "title": "Afterglow",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Afterglow.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Afterglow.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Afterglow-cover.jpg"
       },
       {
         "title": "City of Sin",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/City%20of%20Sin.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/City%20of%20Sin.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/City%20of%20Sin-cover.jpg"
       },
       {
         "title": "Crimson Nights",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Crimson%20Nights.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Crimson%20Nights.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Crimson%20Nights-cover.jpg"
       },
       {
         "title": "Electric Desires",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Electric%20Desires.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Electric%20Desires.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Electric%20Desires-cover.jpg"
       },
       {
         "title": "Eternal Vice",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Eternal%20Vice.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Eternal%20Vice.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Eternal%20Vice-cover.jpg"
       },
       {
         "title": "Glass Hearts",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Glass%20Hearts.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Glass%20Hearts.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Glass%20Hearts-cover.jpg"
       },
       {
         "title": "Neon Temptation",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Neon%20Temptation.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Neon%20Temptation.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Neon%20Temptation-cover.jpg"
       },
       {
         "title": "Shadow Play",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Shadow%20Play.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Shadow%20Play.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Shadow%20Play-cover.jpg"
       },
       {
         "title": "Starfall",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Starfall.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Starfall.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Starfall-cover.jpg"
       },
       {
         "title": "Velvet Chains",
-        "src": "/ADW-music/Pop%20-%20Top%20Hits/Velvet%20Chains.mp3"
+        "src": "/ADW-music/Pop%20-%20Top%20Hits/Velvet%20Chains.mp3",
+        "image": "/ADW-music/Pop%20-%20Top%20Hits/Velvet%20Chains-cover.jpg"
       }
     ],
     "R&B - Soul": [
       {
         "title": "Broken Promises",
-        "src": "/ADW-music/R%26B%20-%20Soul/Broken%20Promises.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Broken%20Promises.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Broken%20Promises-cover.jpg"
       },
       {
         "title": "Burn Slow",
-        "src": "/ADW-music/R%26B%20-%20Soul/Burn%20Slow.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Burn%20Slow.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Burn%20Slow-cover.jpg"
       },
       {
         "title": "Cold Embrace",
-        "src": "/ADW-music/R%26B%20-%20Soul/Cold%20Embrace.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Cold%20Embrace.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Cold%20Embrace-cover.jpg"
       },
       {
         "title": "Cold Sheets",
-        "src": "/ADW-music/R%26B%20-%20Soul/Cold%20Sheets.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Cold%20Sheets.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Cold%20Sheets-cover.jpg"
       },
       {
         "title": "Echoes of You",
-        "src": "/ADW-music/R%26B%20-%20Soul/Echoes%20of%20You.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Echoes%20of%20You.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Echoes%20of%20You-cover.jpg"
       },
       {
         "title": "Empty Rooms",
-        "src": "/ADW-music/R%26B%20-%20Soul/Empty%20Rooms.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Empty%20Rooms.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Empty%20Rooms-cover.jpg"
       },
       {
         "title": "Fade Into You",
-        "src": "/ADW-music/R%26B%20-%20Soul/Fade%20Into%20You.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Fade%20Into%20You.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Fade%20Into%20You-cover.jpg"
       },
       {
         "title": "Falling Again",
-        "src": "/ADW-music/R%26B%20-%20Soul/Falling%20Again.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Falling%20Again.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Falling%20Again-cover.jpg"
       },
       {
         "title": "Lost In Your Eyes",
-        "src": "/ADW-music/R%26B%20-%20Soul/Lost%20In%20Your%20Eyes.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Lost%20In%20Your%20Eyes.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Lost%20In%20Your%20Eyes-cover.jpg"
       },
       {
         "title": "Lost Touch",
-        "src": "/ADW-music/R%26B%20-%20Soul/Lost%20Touch.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Lost%20Touch.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Lost%20Touch-cover.jpg"
       },
       {
         "title": "Midnight Confessions",
-        "src": "/ADW-music/R%26B%20-%20Soul/Midnight%20Confessions.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Midnight%20Confessions.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Midnight%20Confessions-cover.jpg"
       },
       {
         "title": "No Good For Me",
-        "src": "/ADW-music/R%26B%20-%20Soul/No%20Good%20For%20Me.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/No%20Good%20For%20Me.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/No%20Good%20For%20Me-cover.jpg"
       },
       {
         "title": "One More Touch",
-        "src": "/ADW-music/R%26B%20-%20Soul/One%20More%20Touch.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/One%20More%20Touch.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/One%20More%20Touch-cover.jpg"
       },
       {
         "title": "Silk & Smoke",
-        "src": "/ADW-music/R%26B%20-%20Soul/Silk%20%26%20Smoke.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Silk%20%26%20Smoke.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Silk%20%26%20Smoke-cover.jpg"
       },
       {
         "title": "Slow Burn",
-        "src": "/ADW-music/R%26B%20-%20Soul/Slow%20Burn.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Slow%20Burn.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Slow%20Burn-cover.jpg"
       },
       {
         "title": "Stay Close",
-        "src": "/ADW-music/R%26B%20-%20Soul/Stay%20Close.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Stay%20Close.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Stay%20Close-cover.jpg"
       },
       {
         "title": "Stay Tonight",
-        "src": "/ADW-music/R%26B%20-%20Soul/Stay%20Tonight.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Stay%20Tonight.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Stay%20Tonight-cover.jpg"
       },
       {
         "title": "Sweet Poison",
-        "src": "/ADW-music/R%26B%20-%20Soul/Sweet%20Poison.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Sweet%20Poison.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Sweet%20Poison-cover.jpg"
       },
       {
         "title": "Tangled Sheets",
-        "src": "/ADW-music/R%26B%20-%20Soul/Tangled%20Sheets.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Tangled%20Sheets.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Tangled%20Sheets-cover.jpg"
       },
       {
         "title": "Touch & Go",
-        "src": "/ADW-music/R%26B%20-%20Soul/Touch%20%26%20Go.mp3"
+        "src": "/ADW-music/R%26B%20-%20Soul/Touch%20%26%20Go.mp3",
+        "image": "/ADW-music/R%26B%20-%20Soul/Touch%20%26%20Go-cover.jpg"
       }
     ]
   }
