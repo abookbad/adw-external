@@ -15,7 +15,7 @@ const navItems = [
 
 const serviceItems = [
   { name: "AI Voice Agents", href: "/services/ai-voice-agents", color: "text-blue-400" },
-  { name: "SEO Services", href: "/services/seo-services", color: "text-green-400" },
+  { name: "SEO + GEO Services", href: "/services/seo-geo-services", color: "text-green-400" },
   { name: "AI Marketing", href: "/services/ai-marketing", color: "text-purple-400" },
   { name: "Web Design", href: "/services/web-design", color: "text-orange-400" },
   { name: "Business Analytics", href: "/services/business-analytics", color: "text-cyan-400" },

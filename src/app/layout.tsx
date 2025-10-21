@@ -117,7 +117,9 @@ export default function RootLayout({
           `}
         </Script>
         <AuthProvider>
-          {children}
+          <div className="pb-40 sm:pb-44 md:pb-48 lg:pb-52 xl:pb-56">
+            {children}
+          </div>
         </AuthProvider>
         <AdwMusicBar />
         <Analytics />

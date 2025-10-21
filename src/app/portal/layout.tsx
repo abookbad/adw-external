@@ -13,7 +13,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     <ThemedInnerPageLayout>
       <PortalSecondaryNav />
       <PortalGuard>
-        <div className="container mx-auto px-4 py-6">{children}</div>
+        <div className="container mx-auto px-4 py-6 pb-40 sm:pb-44 md:pb-48 lg:pb-52 xl:pb-56">{children}</div>
       </PortalGuard>
     </ThemedInnerPageLayout>
   );

@@ -493,15 +493,15 @@ const SEOBenefits = () => (
 export default function SEOServicesPage() {
   return (
     <ThemedInnerPageLayout themeColor="blue">
-      <PageHeroTitle titleLine1="SEO" titleLine2="Services" />
+      <PageHeroTitle titleLine1="SEO + GEO" titleLine2="Services" />
       
       <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 pt-12 sm:pt-20 md:pt-28 pb-8 sm:pb-16">
         <motion.div className="text-center mb-20 sm:mb-28 md:mb-36" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
-            Climb Google.<br className="sm:hidden" /> Dominate Your Market.
+            Win SEO today. Own GEO tomorrow.
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
-            See exactly how SEO factors affect your search rankings and discover the keywords that will drive real traffic to your business.
+            AI is changing search. Google’s AI Overviews (GEO) surface brand entities and authoritative answers. We engineer your site for classic SEO rankings and optimize your entity footprint so you show up inside AI Overviews, local, and everywhere people search.
           </p>
         </motion.div>
 
@@ -511,14 +511,14 @@ export default function SEOServicesPage() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mb-12 sm:mb-16 md:mb-20">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
-            When You&apos;re Invisible, You Don&apos;t Sell
+            What is GEO and why it matters
           </h3>
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-[family-name:var(--font-geist-mono)]">
-              Every day your website doesn&apos;t appear on Google&apos;s first page, potential customers are finding your competitors instead. You&apos;re losing sales to businesses that simply rank higher.
+              GEO (Google AI Overviews) is Google’s AI-generated summary that sits above traditional results. It favors strong entities, structured data, citation-worthy content, and real-world signals.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-green-300 leading-relaxed font-[family-name:var(--font-geist-mono)] font-semibold">
-              Discover exactly where you rank now and see how much traffic you&apos;re missing out on.
+              If AI is the future, GEO is the front door. Get your brand listed in the answer.
             </p>
           </div>
         </motion.div>
@@ -531,11 +531,41 @@ export default function SEOServicesPage() {
           <SEOBenefits />
         </div>
 
+        {/* GEO vs SEO section */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="bg-slate-800/60 rounded-2xl p-4 sm:p-6 md:p-10 border border-blue-700/30 mb-24 sm:mb-32 md:mb-40">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">GEO vs SEO — We dominate both</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="bg-slate-900/40 border border-slate-700 rounded-xl p-4 sm:p-6">
+              <h4 className="text-lg sm:text-xl font-bold text-blue-400 mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">SEO (Classic Rankings)</h4>
+              <ul className="list-disc list-inside text-slate-300 text-sm space-y-2">
+                <li>Technical audits, Core Web Vitals, crawl & index optimization</li>
+                <li>Keyword research, on-page optimization, internal linking</li>
+                <li>Content strategy and authority building with quality backlinks</li>
+                <li>Local SEO for maps, reviews, and proximity signals</li>
+              </ul>
+            </div>
+            <div className="bg-slate-900/40 border border-slate-700 rounded-xl p-4 sm:p-6">
+              <h4 className="text-lg sm:text-xl font-bold text-green-400 mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">GEO (AI Overviews)</h4>
+              <ul className="list-disc list-inside text-slate-300 text-sm space-y-2">
+                <li>Entity optimization: schema, knowledge graph, brand mentions</li>
+                <li>Answer-engine content tuned for citations and summaries</li>
+                <li>E-E-A-T signals: authorship, sources, proofs, and freshness</li>
+                <li>Data structuring for AI retrieval and snippet eligibility</li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-center mt-6 sm:mt-8">
+            <p className="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto font-[family-name:var(--font-geist-mono)]">
+              You shouldn’t have to choose. We engineer your site to rank in traditional results and to be referenced inside AI Overviews. More visibility. More clicks. More customers.
+            </p>
+          </div>
+        </motion.div>
+
         <motion.div className="text-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Ready to Dominate Search Results?</h3>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Link href="/contact?subject=SEO%20Strategy%20Consultation" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-colors duration-300 shadow-md hover:shadow-lg font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
-              Get SEO Analysis
+            <Link href="/contact?subject=SEO%20%2B%20GEO%20Strategy%20Consultation" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-colors duration-300 shadow-md hover:shadow-lg font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+              Get SEO + GEO Plan
             </Link>
             <Link href="/services" className="border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-colors duration-300 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
               Explore All Services

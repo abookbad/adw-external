@@ -7,16 +7,16 @@ import { PageHeroTitle } from '../../components/PageHeroTitle'; // Adjusted impo
 
 const services = [
   {
-    name: "AI Voice Agents (Inbound/Outbound) & Text",
-    description: "AI-powered voice & text agents for 24/7 customer service, sales outreach, lead qualification, and appointment setting.",
+    name: "AI Voice Agents (Inbound/Outbound)",
+    description: "AI-powered voice agents for 24/7 customer service, sales outreach, lead qualification, and appointment setting.",
     imageUrl: "/services-images/AI.png",
     slug: "ai-voice-agents"
   },
   {
-    name: "SEO Services",
-    description: "Boost organic traffic and rankings with data-driven SEO, including keyword research, on-page/technical optimization, and local SEO.",
+    name: "SEO + GEO Services",
+    description: "SEO + GEO: Win classic rankings and AI Overviews. We optimize entities, content, technicals, and local so you get found everywhere people search.",
     imageUrl: "/services-images/SEO.png",
-    slug: "seo-services"
+    slug: "seo-geo-services"
   },
   {
     name: "AI Marketing - Proprietary Ad Optimizer",
