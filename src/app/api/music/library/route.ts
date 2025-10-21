@@ -4,6 +4,7 @@ import path from 'path';
 
 // Node runtime required for fs
 export const runtime = 'nodejs';
+export const dynamic = 'force-static';
 
 function isAudioFile(name: string) {
   const lc = name.toLowerCase();
@@ -47,7 +48,13 @@ export async function GET(_req: NextRequest) {
       }
       if (tracks.length) library[genre] = tracks;
     }
-    return NextResponse.json({ library });
+    // Mark response as cacheable at edge/CDN to avoid re-running function often
+    return new NextResponse(JSON.stringify({ library }), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || 'Failed to load library' }, { status: 500 });
   }
