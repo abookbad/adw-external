@@ -140,14 +140,13 @@ const DataInsightsDiscoveryDemo = () => {
 
   const currentStageData = showInsights ? businessScenariosData[activeScenario].after : businessScenariosData[activeScenario].before;
 
-  const stepVariants = {
+  const stepVariants: import('framer-motion').Variants = {
     hidden: { opacity: 0, x: -20, scale: 0.95 },
-    visible: (i: number) => ({ 
+    visible: { 
       opacity: 1, 
       x: 0,
       scale: 1,
-      transition: { delay: i * 0.2, type: 'spring', stiffness: 120 }
-    })
+    }
   };
 
   useEffect(() => {
@@ -210,7 +209,7 @@ const DataInsightsDiscoveryDemo = () => {
                         'bg-cyan-700/30 border-cyan-500/50 opacity-100' : 
                         'bg-slate-700/20 border-slate-600/30 opacity-40'
                       }`}
-                      custom={i} variants={stepVariants} initial="hidden" animate={i <= currentStep ? "visible" : "hidden"}
+                    variants={stepVariants} initial="hidden" animate={i <= currentStep ? "visible" : "hidden"} transition={{ delay: i * 0.2, type: 'spring', stiffness: 120 }}
                     >
                       <div className="flex items-start gap-2 sm:gap-3">
                         <InsightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -227,7 +226,7 @@ const DataInsightsDiscoveryDemo = () => {
                   <motion.div
                       key={dataPoint.name + i} 
                       className="flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 rounded-md text-xs sm:text-sm font-[family-name:var(--font-geist-mono)] tracking-wider bg-slate-700/40"
-                      custom={i} variants={stepVariants} initial="hidden" animate="visible"
+                      variants={stepVariants} initial="hidden" animate="visible" transition={{ delay: i * 0.2, type: 'spring', stiffness: 120 }}
                     >
                       <RawDataIcon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 flex-shrink-0" />
                       <div className="flex-grow">

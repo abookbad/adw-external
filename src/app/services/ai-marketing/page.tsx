@@ -129,13 +129,13 @@ const MarketingTransformationDemo = () => {
 
   const currentStageData = isAIPowered ? campaignData[activeCampaign].after : campaignData[activeCampaign].before;
 
-  const stepVariants = {
+  const stepVariants: import('framer-motion').Variants = {
     hidden: { opacity: 0, y: 10 },
-    visible: (i: number) => ({ 
+    visible: { 
       opacity: 1, 
       y: 0,
-      transition: { delay: i * 0.15, type: 'spring', stiffness: 100 }
-    })
+      transition: { delay: 0.15, type: 'spring', stiffness: 100 }
+    }
   };
 
   return (
@@ -175,7 +175,7 @@ const MarketingTransformationDemo = () => {
                   <motion.div 
                     key={step.name + i} 
                     className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 rounded-md text-xs sm:text-sm font-[family-name:var(--font-geist-mono)] tracking-wider ${step.type === 'auto' ? 'bg-purple-700/30' : 'bg-slate-700/40'}`}
-                    custom={i} variants={stepVariants} initial="hidden" animate="visible"
+                    variants={stepVariants} initial="hidden" animate="visible" transition={{ delay: i * 0.15, type: 'spring', stiffness: 100 }}
                   >
                     {step.type === 'auto' ? <AIIcon className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" /> : <TraditionalIcon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 flex-shrink-0" />}
                     <span className={step.type === 'auto' ? 'text-purple-300' : 'text-slate-300'}>{step.name}</span>

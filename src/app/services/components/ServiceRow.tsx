@@ -14,11 +14,11 @@ interface ServiceRowProps {
 }
 
 export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, imageUrl, isReversed = false, slug }) => {
-  const simpleFadeInVariants = {
+  const simpleFadeInVariants: import('framer-motion').Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5 },
     },
   };
 

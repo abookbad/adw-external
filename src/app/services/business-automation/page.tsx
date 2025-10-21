@@ -117,13 +117,12 @@ const WorkflowTransformationDemo = () => {
 
   const currentStageData = isAutomated ? workflowData[activeWorkflow].after : workflowData[activeWorkflow].before;
 
-  const stepVariants = {
+  const stepVariants: import('framer-motion').Variants = {
     hidden: { opacity: 0, y: 10 },
-    visible: (i:number) => ({ 
+    visible: { 
       opacity: 1, 
-      y: 0,
-      transition: { delay: i * 0.15, type: 'spring', stiffness:100 }
-    })
+      y: 0
+    }
   };
 
   return (
@@ -163,7 +162,7 @@ const WorkflowTransformationDemo = () => {
                   <motion.div 
                     key={step.name + i} 
                     className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 rounded-md text-xs sm:text-sm font-[family-name:var(--font-geist-mono)] tracking-wider ${step.type === 'auto' ? 'bg-emerald-700/30' : 'bg-slate-700/40'}`}
-                    custom={i} variants={stepVariants} initial="hidden" animate="visible"
+                    variants={stepVariants} initial="hidden" animate="visible" transition={{ delay: i * 0.15, type: 'spring', stiffness:100 }}
                   >
                     {step.type === 'auto' ? <AutomatedStepIcon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 flex-shrink-0" /> : <ManualStepIcon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 flex-shrink-0" />}
                     <span className={step.type === 'auto' ? 'text-emerald-300' : 'text-slate-300'}>{step.name}</span>

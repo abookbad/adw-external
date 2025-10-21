@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Comfortaa, Lato } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import AuthProvider from './components/AuthProvider';
+import AdwMusicBar from './components/AdwMusicBar';
 import { Analytics } from "@vercel/analytics/next"
 
 
@@ -118,6 +119,7 @@ export default function RootLayout({
         <AuthProvider>
           {children}
         </AuthProvider>
+        <AdwMusicBar />
         <Analytics />
       </body>
     </html>
