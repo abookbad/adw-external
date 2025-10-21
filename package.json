@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "prebuild": "node scripts/generate-music-library.cjs",
     "lint": "next lint"
   },
   "dependencies": {

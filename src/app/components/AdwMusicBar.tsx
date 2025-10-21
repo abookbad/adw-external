@@ -53,7 +53,8 @@ export default function AdwMusicBar() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/music/library');
+        // Prefer static JSON generated at build to avoid hitting a serverless route
+        const res = await fetch('/music-library.json', { cache: 'force-cache' });
         const data = await res.json();
         const lib: Library = data.library || {};
         setLibrary(lib);
