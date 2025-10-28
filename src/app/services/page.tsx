@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import ServicesPageClientContent from './components/ServicesPageClientContent';
 
 export const metadata: Metadata = {
-  title: "Our Expert Tech Services - AI, SEO, Web Design & More",
-  description: "Explore Agency Dev Works' comprehensive services: AI Voice Agents, SEO, AI Marketing, Web Design, Business Analytics, and Business Automation. Drive your business forward.",
-  keywords: ["services", "AI voice agents", "SEO services", "AI marketing", "web design", "business analytics", "business automation", "tech solutions"],
+  title: "Our Services — Web Design, Voice AI, Automation, AI Marketing",
+  description: "Explore Agency Dev Works services: Web Design, Voice AI, Business Automation, and AI Marketing.",
+  keywords: ["services", "voice ai", "ai marketing", "web design", "business automation"],
   alternates: {
     canonical: "/services",
   },

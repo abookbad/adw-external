@@ -62,7 +62,7 @@ export default function PortalSecondaryNav() {
   const row3Items = items.filter(i => row3Names.has(i.name));
 
   return (
-    <div className="sticky top-20 sm:top-24 z-40 -mx-4 sm:-mx-6 lg:-mx-8 -mt-20 sm:-mt-24 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+    <div className="sticky top-11 sm:top-24 z-40 -mx-4 sm:-mx-6 lg:-mx-8 mb-12 sm:mb-14 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50 py-1">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Mobile layout: 3 rows */}
         <div className="block sm:hidden py-3">
@@ -124,9 +124,9 @@ export default function PortalSecondaryNav() {
         </div>
 
         {/* Desktop/tablet layout: original */}
-        <div className="hidden sm:flex items-center justify-center gap-6 overflow-x-auto py-3">
+        <div className="hidden sm:flex items-center justify-center gap-6 overflow-x-auto h-14">
           {companies.length > 0 && (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 h-full">
               <span className="text-slate-400 text-xs font-[family-name:var(--font-geist-mono)] uppercase tracking-wider">Company</span>
               <select
                 value={selected ?? ''}
@@ -135,7 +135,7 @@ export default function PortalSecondaryNav() {
                   const c = companies.find((x) => x.id === e.target.value);
                   setSelectedCompany({ id: c?.id || null, name: c?.name || null });
                 }}
-                className="bg-slate-800 text-white text-xs border border-slate-700 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="bg-slate-800 text-white text-xs border border-slate-700 rounded-md px-2 py-1 h-9 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {uniqueCompanies.map((c, i) => (
                   <option key={`${c.id}-${i}`} value={c.id}>{c.name}</option>
@@ -144,7 +144,7 @@ export default function PortalSecondaryNav() {
             </div>
           )}
 
-          <ul className="flex justify-center space-x-6">
+          <ul className="flex items-center justify-center space-x-6 h-full">
             {items.map((item) => {
               const active = pathname === item.href;
               return (

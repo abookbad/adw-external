@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import AboutPageClientContent from './components/AboutPageClientContent'; // Adjusted import path
 
 export const metadata: Metadata = {
-  title: "About Agency Dev Works - Our Mission & Team",
-  description: "Learn about Agency Dev Works: our mission to transform businesses through technology, our expert team, and our approach to delivering innovative AI and web solutions.",
+  title: "About Agency Dev Works - Web Design, Voice AI, Automation, AI Marketing",
+  description: "ADW builds growth systems: Web Design, Voice AI, Business Automation, and AI Marketing.",
   keywords: ["about us", "company mission", "expert team", "technology consultancy", "AI development", "Agency Dev Works team", "our story"],
   alternates: {
     canonical: "/about",

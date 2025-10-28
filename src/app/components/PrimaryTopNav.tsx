@@ -15,12 +15,10 @@ const navItems = [
 ];
 
 const serviceItems = [
-  { name: "AI Voice Agents", href: "/services/ai-voice-agents" },
-  { name: "SEO + GEO Services", href: "/services/seo-geo-services" },
-  { name: "AI Marketing", href: "/services/ai-marketing" },
   { name: "Web Design", href: "/services/web-design" },
-  { name: "Business Analytics", href: "/services/business-analytics" },
+  { name: "Voice AI", href: "/services/ai-voice-agents" },
   { name: "Business Automation", href: "/services/business-automation" },
+  { name: "AI Marketing", href: "/services/ai-marketing" },
 ];
 
 export const PrimaryTopNav = () => {
@@ -28,6 +26,14 @@ export const PrimaryTopNav = () => {
   const [menuPos, setMenuPos] = useState<{ left: number; top: number } | null>(null);
   const { user } = useAuth();
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   async function handleLogout() {
     try {
@@ -75,6 +81,7 @@ export const PrimaryTopNav = () => {
               setMenuPos({ left: r.left + r.width / 2, top: r.bottom + 8 });
             }}
             onMouseLeave={() => setIsServicesOpen(false)}
+            onClick={() => setIsServicesOpen((v) => !v)}
           >
             <div className="font-[family-name:var(--font-geist-mono)] text-xs xs:text-sm sm:text-base md:text-lg text-slate-300 hover:text-cyan-400 transition-colors tracking-normal sm:tracking-wider uppercase p-1.5 sm:p-3 cursor-pointer flex items-center gap-1">
               <Link href="/services">Services</Link>
@@ -98,8 +105,8 @@ export const PrimaryTopNav = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.15, ease: "easeOut" }}
-                  className="fixed -translate-x-1/2 w-64 bg-slate-900/95 backdrop-blur-md rounded-md shadow-2xl border border-slate-700/50 py-2 px-1 z-[999] max-h-[70vh] overflow-auto"
-                  style={menuPos ? { left: menuPos.left, top: menuPos.top } : undefined}
+                  className="fixed bg-slate-900/95 backdrop-blur-md rounded-md shadow-2xl border border-slate-700/50 py-2 px-2 z-[999] max-h-[70vh] overflow-auto left-2 right-2 sm:left-auto sm:right-auto sm:-translate-x-1/2 sm:w-64"
+                  style={menuPos ? { left: isMobile ? undefined : menuPos.left, top: menuPos.top } : undefined}
                 >
                   <div className="space-y-0">
                     {serviceItems.map((service, index) => (

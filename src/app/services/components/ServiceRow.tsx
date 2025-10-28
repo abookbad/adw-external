@@ -30,16 +30,14 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }} // Slightly adjusted amount
     >
-      <div // Changed from motion.div, no individual animation for image block
-        className="w-64 h-64 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] relative rounded-full overflow-hidden shadow-xl flex items-center justify-center p-6 md:p-8 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 cursor-pointer group"
-      >
+      <Link href={`/services/${slug}`} className="w-64 h-64 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] relative rounded-full overflow-hidden shadow-xl flex items-center justify-center p-6 md:p-8 cursor-pointer block">
         <Image 
           src={imageUrl} 
           alt={name} 
           fill={true} 
-          className="object-contain transition-transform duration-300 group-hover:scale-105 p-8 md:p-12"
+          className="object-contain p-8 md:p-12"
         />
-      </div>
+      </Link>
 
       <div // Changed from motion.div, no individual animation for text block
         className={`w-full md:w-1/2 flex flex-col items-center text-center ${
@@ -61,13 +59,13 @@ export const ServiceRow: React.FC<ServiceRowProps> = ({ name, description, image
         <div className="flex flex-col sm:flex-row gap-3">
           <Link 
             href={`/services/${slug}`}
-            className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center hover:scale-105"
+            className="bg-blue-700 hover:bg-blue-600 text-white font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-lg transition-colors duration-200 shadow-md text-sm lg:text-base text-center"
           >
             Learn More
           </Link>
           <Link 
             href="/contact" 
-            className="hidden md:block border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm lg:text-base text-center"
+            className="hidden md:block border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md text-sm lg:text-base text-center"
           >
             Get Quote
           </Link>

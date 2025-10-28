@@ -549,6 +549,42 @@ export default function WebDesignPage() {
           </p>
         </motion.div>
 
+        {/* SEO + GEO built-in section */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="mb-20 sm:mb-28 md:mb-36">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">
+            SEO + GEO Built Into Every Site
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
+              <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Technical SEO</h4>
+              <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
+                <li>Core Web Vitals and performance budgets</li>
+                <li>Clean IA, crawlability and index controls</li>
+                <li>Schema and structured data</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
+              <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">On‑Page + Local</h4>
+              <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
+                <li>Entity‑driven content and internal linking</li>
+                <li>Metadata, headings, and content templates</li>
+                <li>Local signals: maps, reviews, NAP consistency</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
+              <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">GEO (AI Overviews)</h4>
+              <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
+                <li>Entity optimization for Knowledge Graph</li>
+                <li>Answer‑engine content engineered for citations</li>
+                <li>Data and markup for AI retrieval</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-sm sm:text-base text-slate-300 mt-6 max-w-3xl mx-auto font-[family-name:var(--font-geist-mono)]">
+            We don’t bolt on SEO after launch. Your site ships fast, indexable, entity‑aware, and ready to be referenced in Google’s AI Overviews.
+          </p>
+        </motion.div>
+
         <div className="mb-24 sm:mb-32 md:mb-40">
           <WebsiteHeatmapSimulator />
         </div>

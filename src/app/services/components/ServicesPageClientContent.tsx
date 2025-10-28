@@ -7,40 +7,28 @@ import { PageHeroTitle } from '../../components/PageHeroTitle'; // Adjusted impo
 
 const services = [
   {
-    name: "AI Voice Agents (Inbound/Outbound)",
-    description: "AI-powered voice agents for 24/7 customer service, sales outreach, lead qualification, and appointment setting.",
-    imageUrl: "/services-images/AI.png",
-    slug: "ai-voice-agents"
-  },
-  {
-    name: "SEO + GEO Services",
-    description: "SEO + GEO: Win classic rankings and AI Overviews. We optimize entities, content, technicals, and local so you get found everywhere people search.",
-    imageUrl: "/services-images/SEO.png",
-    slug: "seo-geo-services"
-  },
-  {
-    name: "AI Marketing - Proprietary Ad Optimizer",
-    description: "Maximize ad spend & conversions with our exclusive AI Ad Optimizer, dynamically adjusting campaigns in real-time for peak performance.",
-    imageUrl: "/services-images/Marketing.png",
-    slug: "ai-marketing"
-  },
-  {
     name: "Web Design",
-    description: "Stunning, responsive, user-centric websites focused on brand identity, intuitive navigation, speed, and SEO for optimal conversions.",
+    description: "Design and build conversion-focused sites that load fast, rank well, and look beautiful. Includes technical SEO, on-page optimization, local presence, and GEO readiness baked into the build.",
     imageUrl: "/services-images/Web Design.png",
     slug: "web-design"
   },
   {
-    name: "Business Analytics",
-    description: "Unlock actionable insights from your data. Custom dashboards and reporting for smarter, data-backed strategic decisions and growth.",
-    imageUrl: "/services-images/Business Analytics.png",
-    slug: "business-analytics"
+    name: "Voice AI",
+    description: "AI voice agents for support, sales, lead qualification, and appointment setting. Human-like conversations, context memory, and 24/7 availability.",
+    imageUrl: "/services-images/AI.png",
+    slug: "ai-voice-agents"
   },
   {
     name: "Business Automation",
-    description: "Automate marketing, sales, and operations. Improve productivity, reduce errors, and free up your valuable time and resources.",
+    description: "Automate marketing, sales, and operations. Streamline workflows, reduce manual tasks, and integrate your stack for reliable growth.",
     imageUrl: "/services-images/Automations.png",
     slug: "business-automation"
+  },
+  {
+    name: "AI Marketing",
+    description: "Scale acquisition with our AI Ad Optimizer and creative tooling. Dynamic budget allocation, multi-channel experimentation, and performance automation.",
+    imageUrl: "/services-images/Marketing.png",
+    slug: "ai-marketing"
   }
 ];
 

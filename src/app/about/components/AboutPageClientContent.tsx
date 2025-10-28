@@ -26,9 +26,9 @@ export default function AboutPageClientContent() {
               Transforming Businesses Through Technology
             </h2>
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)] tracking-wider">
-              Agency Dev Works (ADW) is a cutting-edge technology consultancy specializing in AI-powered solutions, 
-              digital transformation, and business automation. We help forward-thinking companies leverage the latest 
-              technologies to achieve unprecedented growth and efficiency.
+              Agency Dev Works (ADW) helps companies grow with four focused offerings: Web Design, Voice AI, Business
+              Automation, and AI Marketing. We design fast, high-performing websites, deploy human-like AI agents,
+              automate operations, and scale acquisition with intelligent marketing systems.
             </p>
           </motion.div>
 
@@ -42,26 +42,26 @@ export default function AboutPageClientContent() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">What We Do</h3>
               <p className="text-slate-300 mb-6 leading-relaxed font-[family-name:var(--font-geist-mono)] tracking-wider">
-                At ADW, we bridge the gap between complex technology and practical business solutions. Our team of experts 
-                specializes in implementing AI voice agents, developing custom web applications, optimizing SEO strategies, 
-                and creating data-driven marketing campaigns that deliver measurable results.
+                We bridge complex tech with practical outcomes. Our core services are streamlined to what moves the needle:
+                conversion-first Web Design with SEO + GEO baked in, production-grade Voice AI, Business Automation across
+                your stack, and AI Marketing that optimizes creative and spend in real time.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">AI Voice Agents & Automation</span>
+                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">Web Design</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">Custom Web Development</span>
+                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">Voice AI</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">SEO & Digital Marketing</span>
+                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">Business Automation</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">Business Analytics & Intelligence</span>
+                  <span className="text-slate-300 font-[family-name:var(--font-geist-mono)] tracking-wider">AI Marketing</span>
                 </div>
               </div>
             </div>
