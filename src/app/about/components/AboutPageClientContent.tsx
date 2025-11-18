@@ -136,44 +136,12 @@ export default function AboutPageClientContent() {
             <h3 className="text-3xl font-bold text-white mb-12 text-center font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Meet the Faces of ADW</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               
-              {/* Sajjad Alobaidi */}
-              <motion.div 
-                className="text-center group"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-              >
-                <div className="relative mb-6">
-                  <Image 
-                    src="/faces-of-adw/Sajjad.jpg" 
-                    alt="Sajjad Alobaidi" 
-                    width={128}
-                    height={128}
-                    className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-slate-700 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-cyan-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <h4 className="text-xl font-bold text-white mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Sajjad Alobaidi</h4>
-                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">Vice President</p>
-                <a 
-                  href="https://www.linkedin.com/in/sajjad-alobaidi-66489930b/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-slate-400 hover:text-cyan-400 transition-colors duration-200 font-[family-name:var(--font-geist-mono)] tracking-wider"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"></path>
-                  </svg>
-                  LinkedIn
-                </a>
-              </motion.div>
-
               {/* Mustafa Alzubaidi */}
               <motion.div 
                 className="text-center group"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
               >
                 <div className="relative mb-6">
                   <Image 
@@ -189,6 +157,38 @@ export default function AboutPageClientContent() {
                 <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">CEO & Founder</p>
                 <a 
                   href="https://www.linkedin.com/in/mustafa-alzubaidi25/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-slate-400 hover:text-cyan-400 transition-colors duration-200 font-[family-name:var(--font-geist-mono)] tracking-wider"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"></path>
+                  </svg>
+                  LinkedIn
+                </a>
+              </motion.div>
+
+              {/* Sajjad Alobaidi */}
+              <motion.div 
+                className="text-center group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <div className="relative mb-6">
+                  <Image 
+                    src="/faces-of-adw/Sajjad.jpg" 
+                    alt="Sajjad Alobaidi" 
+                    width={128}
+                    height={128}
+                    className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-slate-700 group-hover:border-cyan-400 transition-all duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-cyan-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Sajjad Alobaidi</h4>
+                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">Vice President</p>
+                <a 
+                  href="https://www.linkedin.com/in/sajjad-alobaidi-66489930b/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-slate-400 hover:text-cyan-400 transition-colors duration-200 font-[family-name:var(--font-geist-mono)] tracking-wider"
