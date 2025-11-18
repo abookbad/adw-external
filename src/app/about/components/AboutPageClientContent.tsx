@@ -154,7 +154,7 @@ export default function AboutPageClientContent() {
                   <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-cyan-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Sajjad Alobaidi</h4>
-                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">Founder & CEO</p>
+                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">Vice President</p>
                 <a 
                   href="https://www.linkedin.com/in/sajjad-alobaidi-66489930b/" 
                   target="_blank" 
@@ -186,7 +186,7 @@ export default function AboutPageClientContent() {
                   <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-cyan-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Mustafa Alzubaidi</h4>
-                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">VP, AI Development</p>
+                <p className="text-cyan-400 font-medium mb-3 font-[family-name:var(--font-geist-mono)] tracking-wider">CEO & Founder</p>
                 <a 
                   href="https://www.linkedin.com/in/mustafa-alzubaidi25/" 
                   target="_blank" 
