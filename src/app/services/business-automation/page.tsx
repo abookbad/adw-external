@@ -357,7 +357,7 @@ const AutomationBenefits = () => (
       {[ 
          { 
            title: "Focus on What Matters", 
-           text: "Stop wasting time on repetitive tasks. Tackle strategic work that drives growth.",
+           text: "Automate the busywork so your team can focus on growth.",
            icon: (
              <svg className="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
@@ -413,7 +413,7 @@ export default function BusinessAutomationPage() {
             Work Smarter,<br className="sm:hidden" /> Not Harder.
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
-            Unlock your team&apos;s full potential by automating repetitive tasks and streamlining complex workflows. We design intelligent automation solutions that boost productivity, reduce errors, and free you to focus on strategic growth.
+            Automate repetitive work so your team can focus on growth.
           </p>
         </motion.div>
 
@@ -427,10 +427,10 @@ export default function BusinessAutomationPage() {
           </h3>
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-[family-name:var(--font-geist-mono)]">
-              Every day, your team wastes hours on repetitive tasks that could be automated. While you&apos;re manually processing orders, scheduling appointments, and managing data entry, your competitors are scaling effortlessly with smart automation.
+              Manual processes slow teams down. Automation removes bottlenecks.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-green-300 leading-relaxed font-[family-name:var(--font-geist-mono)] font-semibold">
-              Stop working IN your business. Start working ON it. Our automation systems don&apos;t just save time—they transform how you operate.
+              See your time and cost savings in minutes.
             </p>
           </div>
         </motion.div>

@@ -489,7 +489,7 @@ const WebDesignBenefits = () => (
       {[ 
          { 
            title: "Subconscious Influence", 
-           text: "94% of first impressions are design-related. Users judge your credibility within 0.05 seconds. Poor design doesn&apos;t just look bad—it actively repels customers and destroys trust before they even read your content.",
+           text: "Design shapes first impressions—and trust—within milliseconds.",
            icon: (
              <svg className="w-8 h-8 sm:w-12 sm:h-12 text-orange-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
@@ -498,7 +498,7 @@ const WebDesignBenefits = () => (
          },
          { 
            title: "Predictable Behavior", 
-           text: "Users follow predictable patterns. Design with psychology = higher conversions.",
+           text: "Design for how people scan and click to lift conversions.",
            icon: (
              <svg className="w-8 h-8 sm:w-12 sm:h-12 text-orange-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
@@ -507,7 +507,7 @@ const WebDesignBenefits = () => (
          },
          { 
            title: "Emotional Connection", 
-           text: "People buy with emotion, justify with logic. Great design triggers both.",
+           text: "Good design triggers emotion and backs it up with clarity.",
            icon: (
              <svg className="w-8 h-8 sm:w-12 sm:h-12 text-orange-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -545,7 +545,7 @@ export default function WebDesignPage() {
             Your Website Controls<br className="sm:hidden" /> User Behavior.
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
-            Every color, layout choice, and spacing decision triggers psychological responses. See exactly how users behave on different designs and why.
+            Design choices drive action—let’s make them convert.
           </p>
         </motion.div>
 
@@ -558,30 +558,30 @@ export default function WebDesignPage() {
             <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
               <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">Technical SEO</h4>
               <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                <li>Core Web Vitals and performance budgets</li>
-                <li>Clean IA, crawlability and index controls</li>
-                <li>Schema and structured data</li>
+                <li>Fast, stable, indexable</li>
+                <li>Clean structure</li>
+                <li>Structured data</li>
               </ul>
             </div>
             <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
               <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">On‑Page + Local</h4>
               <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                <li>Entity‑driven content and internal linking</li>
-                <li>Metadata, headings, and content templates</li>
-                <li>Local signals: maps, reviews, NAP consistency</li>
+                <li>Strong content patterns</li>
+                <li>Clear metadata</li>
+                <li>Local signals</li>
               </ul>
             </div>
             <div className="bg-slate-800/60 rounded-xl border border-slate-700 p-4 sm:p-6">
               <h4 className="text-orange-400 font-semibold text-base mb-2 font-[family-name:var(--font-geist-mono)] tracking-wider uppercase">GEO (AI Overviews)</h4>
               <ul className="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                <li>Entity optimization for Knowledge Graph</li>
-                <li>Answer‑engine content engineered for citations</li>
-                <li>Data and markup for AI retrieval</li>
+                <li>Entity awareness</li>
+                <li>Citation‑ready content</li>
+                <li>AI‑friendly markup</li>
               </ul>
             </div>
           </div>
           <p className="text-center text-sm sm:text-base text-slate-300 mt-6 max-w-3xl mx-auto font-[family-name:var(--font-geist-mono)]">
-            We don’t bolt on SEO after launch. Your site ships fast, indexable, entity‑aware, and ready to be referenced in Google’s AI Overviews.
+            Your site ships fast, structured, and ready to be discovered.
           </p>
         </motion.div>
 

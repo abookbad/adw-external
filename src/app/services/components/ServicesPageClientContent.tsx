@@ -8,25 +8,25 @@ import { PageHeroTitle } from '../../components/PageHeroTitle'; // Adjusted impo
 const services = [
   {
     name: "Web Design",
-    description: "Design and build conversion-focused sites that load fast, rank well, and look beautiful. Includes technical SEO, on-page optimization, local presence, and GEO readiness baked into the build.",
+    description: "Design and build conversion-focused sites.",
     imageUrl: "/services-images/Web Design.png",
     slug: "web-design"
   },
   {
     name: "Voice AI",
-    description: "AI voice agents for support, sales, lead qualification, and appointment setting. Human-like conversations, context memory, and 24/7 availability.",
+    description: "Human-like agents for support, sales, and booking.",
     imageUrl: "/services-images/AI.png",
     slug: "ai-voice-agents"
   },
   {
     name: "Business Automation",
-    description: "Automate marketing, sales, and operations. Streamline workflows, reduce manual tasks, and integrate your stack for reliable growth.",
+    description: "Automate workflows across marketing, sales, and ops.",
     imageUrl: "/services-images/Automations.png",
     slug: "business-automation"
   },
   {
     name: "AI Marketing",
-    description: "Scale acquisition with our AI Ad Optimizer and creative tooling. Dynamic budget allocation, multi-channel experimentation, and performance automation.",
+    description: "Optimize ads and creatives with AI for scalable growth.",
     imageUrl: "/services-images/Marketing.png",
     slug: "ai-marketing"
   }

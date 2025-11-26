@@ -416,7 +416,7 @@ const AIVoiceAgentCapabilities = () => (
           {[
             {
               title: "Natural Conversation",
-              description: "Speaks with human-like tone, pauses, and inflection. No robotic responses.",
+              description: "Human-like tone, pauses, and inflection—never robotic.",
               icon: (
                 <svg className="w-6 h-6 text-teal-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
@@ -697,7 +697,7 @@ export default function AIVoiceAgentsPage() {
             Human-Like Conversations.<br className="sm:hidden" /> Zero Human Limits.
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
-            Experience AI agents that sound natural, understand context, and handle complex customer interactions 24/7.
+            Natural-sounding agents that handle calls 24/7.
           </p>
         </motion.div>
 
@@ -715,10 +715,7 @@ export default function AIVoiceAgentsPage() {
           </h3>
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-[family-name:var(--font-geist-mono)]">
-              Angry customers, complex sales inquiries, technical troubleshooting - see exactly how AI agents navigate challenging conversations step-by-step. No scripts, just intelligent responses that adapt to each situation.
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-teal-300 leading-relaxed font-[family-name:var(--font-geist-mono)] font-semibold">
-              Watch real conversation scenarios unfold and see the strategic thinking behind each response.
+              See how agents defuse tough calls and keep conversations on track.
             </p>
           </div>
         </motion.div>

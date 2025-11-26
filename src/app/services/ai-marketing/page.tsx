@@ -402,7 +402,7 @@ const MarketingBenefits = () => (
          },
          { 
            title: "Real ROI", 
-           text: "Stop guessing. AI shows exactly what&apos;s working and what&apos;s not.",
+           text: "AI shows what works and what doesn&apos;t—no guesswork.",
            icon: (
              <svg className="w-8 h-8 sm:w-12 sm:h-12 text-purple-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
@@ -440,7 +440,7 @@ export default function AIMarketingPage() {
             Stop Guessing,<br className="sm:hidden" /> Start Converting.
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-mono)]">
-            Transform your marketing from spray-and-pray to laser-focused precision. Our AI analyzes millions of data points to target the right people with the right message at the perfect moment.
+            AI targets the right people with the right message—automatically.
           </p>
         </motion.div>
 
@@ -454,10 +454,10 @@ export default function AIMarketingPage() {
           </h3>
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-[family-name:var(--font-geist-mono)]">
-              Every day you run campaigns with manual targeting and guesswork, you&apos;re throwing money at the wrong people. Your competitors are using AI to find customers you&apos;re missing and convert prospects you&apos;re losing.
+              Manual targeting wastes spend. AI finds and converts the right audience faster.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-purple-300 leading-relaxed font-[family-name:var(--font-geist-mono)] font-semibold">
-              Calculate exactly how much revenue you&apos;re leaving on the table — and how much AI could unlock for your business.
+              Use the calculator to estimate your uplift.
             </p>
           </div>
         </motion.div>
