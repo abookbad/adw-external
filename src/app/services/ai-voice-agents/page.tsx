@@ -13,12 +13,12 @@ const PhoneIcon = ({ className = "w-6 h-6 text-green-500" }: { className?: strin
   </svg>
 );
 
-// Voice call scenarios with VAPI workflow IDs
+// Voice call scenarios with VAPI assistant IDs
 const callScenarios = {
   customerService: {
     title: "Customer Service",
     description: "AI handles support inquiries and troubleshooting",
-    workflowId: "4ae56811-4307-464b-87a8-77826799ce67",
+    assistantId: "cf0ed8a3-47ff-4d92-9937-41d1fb140709",
     features: [
       "Order status inquiries",
       "Product troubleshooting",
@@ -29,7 +29,7 @@ const callScenarios = {
   leadQualification: {
     title: "Lead Qualification", 
     description: "AI qualifies prospects and books demos",
-    workflowId: "e9c705ec-dc69-400d-bba0-a5e336960d4c",
+    assistantId: "8026cd58-4e97-4256-b1e3-018b021816f9",
     features: [
       "Budget qualification",
       "Needs assessment",
@@ -40,7 +40,7 @@ const callScenarios = {
   appointmentBooking: {
     title: "Appointment Booking",
     description: "AI schedules appointments seamlessly",
-    workflowId: "d16d5f14-2edd-4cff-afd8-72193da970f3",
+    assistantId: "7ef17c16-d3fd-4b26-b05f-398319d279f2",
     features: [
       "Calendar availability",
       "Service selection",
@@ -144,7 +144,7 @@ const LiveVoiceCallDemo = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          workflowId: currentScenario.workflowId,
+          assistantId: (currentScenario as any).assistantId,
           phoneNumber: apiPhoneNumber,
           industry,
           scenarioTitle: currentScenario.title,

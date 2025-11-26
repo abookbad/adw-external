@@ -8,12 +8,12 @@ const VAPI_CONFIG = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { workflowId, phoneNumber, name, businessName, email, industry, scenarioTitle } = await request.json();
+    const { assistantId, phoneNumber, name, businessName, email, industry, scenarioTitle } = await request.json();
 
     // Validate required fields
-    if (!workflowId || !phoneNumber) {
+    if (!assistantId || !phoneNumber) {
       return NextResponse.json(
-        { error: 'Missing required fields: workflowId and phoneNumber' },
+        { error: 'Missing required fields: assistantId and phoneNumber' },
         { status: 400 }
       );
     }
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     // Prepare VAPI payload without customer.first_name; pass name via assistantOverrides
     const payload = {
-      workflowId: workflowId,
+      assistantId: assistantId,
       customer: { number: phoneNumber },
       phoneNumberId: VAPI_CONFIG.VAPI_PHONE_NUMBER_ID,
       assistantOverrides: {
@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
         phoneDigits: digitsOnlyPhone,
         industry,
         scenario: scenarioTitle,
-        workflowId,
+        assistantId,
         callId: responseData?.id ?? null,
         timestamp: new Date().toISOString()
       };
