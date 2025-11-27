@@ -117,6 +117,11 @@ export default function RootLayout({
             gtag('config', 'G-9G1KMKJJ27');
           `}
         </Script>
+        <Script
+          id="hotjar-contentsquare"
+          src="https://t.contentsquare.net/uxa/d9070de26c226.js"
+          strategy="afterInteractive"
+        />
         <AuthProvider>
           <LayoutContentWrapper>
             {children}
